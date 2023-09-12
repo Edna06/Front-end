@@ -1,0 +1,22 @@
+<svg width="26" height="31" viewBox="0 0 26 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="26" height="31" fill="#1E1E1E"/>
+<g id="Components">
+<rect width="11072" height="2543" transform="translate(-276 -472)" fill="#000405"/>
+<g id="Navbar">
+<g id="mobile=false, admin=false">
+<rect width="1368" height="104" transform="translate(-125 -36.6336)" fill="#00111A"/>
+<g id="Frame 7609">
+<g id="Frame 5946" clip-path="url(#clip0_1_2784)">
+<path id="Polygon 1" d="M13 0.366394L25.9904 7.86639V22.8664L13 30.3664L0.00961876 22.8664V7.86639L13 0.366394Z" fill="#065E7C"/>
+</g>
+</g>
+</g>
+<rect x="-167.5" y="-101.134" width="1452" height="775" rx="4.5" stroke="#065E7C"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_1_2784">
+<rect width="197" height="30" fill="white" transform="translate(-2 0.366394)"/>
+</clipPath>
+</defs>
+</svg>
