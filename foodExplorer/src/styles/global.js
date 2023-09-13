@@ -44,8 +44,14 @@ button, a{
 button:hover, a:hover{
     filter: brightness(0.9)
 }
+
+input{
+    font-family: 'Roboto', sans-serif;
+}
+
 ::placeholder{
     color: ${({ theme }) => theme.COLORS.GRAY_300};
+    font-family: 'Roboto', sans-serif;
 }
 
 `
