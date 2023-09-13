@@ -29,6 +29,14 @@ h2, h3, a, button{
 a{
     text-decoration: none;
 }
+
+button {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    border: none;
+}
+
 button, a{
     cursor: pointer;
     transition: filter 0.2s;
