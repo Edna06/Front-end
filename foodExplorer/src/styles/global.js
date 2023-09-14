@@ -31,7 +31,7 @@ body, input, button, textarea{
 
 
 h1{
-    font-size: bold;
+    font-size: 700;
 }
 
 
