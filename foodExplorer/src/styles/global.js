@@ -50,6 +50,12 @@ button {
     border: none;
 }
 
+
+button:hover{
+      transform: scale(0.99);
+      transition: all 0.7s;
+}
+
 button, a{
     font-size: 1.4rem;
     line-height: 2.4rem;

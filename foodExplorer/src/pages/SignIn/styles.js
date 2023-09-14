@@ -15,6 +15,35 @@ export const Container = styled.div`
             line-height: 5rem;
         }
     }
+
+
+    //adicionando responsividade
+    @media (max-width: 810px) {
+    > div{
+        > h1 {
+            font-size: 3.6rem;
+        }
+        > svg {
+            width: 6rem;
+            height: 6rem;
+        }
+    }
+}
+    @media (max-width: 760px) {
+    flex-direction: column;
+    justify-content: space-evenly;
+    > div{
+        padding: 1.2rem;
+        > h1 {
+            font-size: 3.2;
+            line-height: 4rem;
+        }
+        > svg {
+            width: 5.2rem;
+            height: 5.2rem;
+        }
+    }
+}
 `;
 
 export const Form = styled.form`
@@ -47,8 +76,19 @@ export const Form = styled.form`
       border: 1px solid ${({theme}) => theme.COLORS.LOGO_COLOR};
     }
 
-    button:hover{
-      transform: scale(0.99);
-      transition: all 0.7s;
+    //adicionando responsividade
+    @media (max-width: 768px) {
+      min-width: 42rem;
+      padding: 4.8rem;
+      margin: 0 1rem;
     }
+
+    @media (max-width: 350px) {
+      min-width: 30rem;
+      padding: 3.2rem;
+      margin: 0 2rem;
+        >h2 {
+         font-size: 2.2rem;
+    }
+}
 `
