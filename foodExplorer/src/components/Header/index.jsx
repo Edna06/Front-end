@@ -19,14 +19,14 @@ export function Header(){
             <Search>
             {<AiOutlineSearch size={20}/>}
                 <input
-                    placeholder = "Busque os pratos"
+                    placeholder = "Busque por pratos"
                     type = "text"
                 />
             </Search>
 
 
             <ButtonHeader
-                title="Meu pedido"
+                title="Pedidos (0)"
             />
 
             <Logout to="/">
