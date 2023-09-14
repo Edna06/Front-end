@@ -5,10 +5,10 @@ export const Container = styled.button`
     color: ${({theme})=> theme.COLORS.WHITE};
 
     width: 100%;
-    height: 48px;
+    height: 4.8rem;
 
-    border-radius: 5px;
-    padding: 12px 32px;
+    border-radius: 0.5rem;
+    padding: 1.2rem 3.2rem;
 
     &disabled{
         opacity: 0.5;

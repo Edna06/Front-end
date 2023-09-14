@@ -9,33 +9,33 @@ export const Container = styled.div`
     > div{
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 2rem;
         > h1 {
-            font-size: 42px;
-            line-height: 50px;
+            font-size: 4.2rem;
+            line-height: 5rem;
         }
     }
 `;
 
 export const Form = styled.form`
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_200};
-    min-width: 476px;
-    min-height: 540px;
-    padding: 64px;
+    min-width: 47.6rem;
+    min-height: 54rem;
+    padding: 6.4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
 
-    gap: 32px;
-    border-radius: 16px;
-    box-shadow: -7px 4px 0 ${({theme}) => theme.COLORS.LOGO_COLOR};
+    gap: 3.2rem;
+    border-radius: 1.6rem;
+    box-shadow: -0.7rem 0.4rem 0 ${({theme}) => theme.COLORS.LOGO_COLOR};
 
     >h2 {
-        font-size: 32px;
+        font-size: 3.2rem;
         font-weight: 500;
-        line-height: 24px;
+        line-height: 2.4rem;
         text-align: center;
     }
 
