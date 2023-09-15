@@ -8,6 +8,9 @@ export const Container = styled.div`
     "header"
     "main"
     "footer";
+
+    overflow-x: hidden;
+
 `;
 export const Main = styled.main`
     grid-area: "main";
@@ -15,6 +18,9 @@ export const Main = styled.main`
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+
+    align-items: center;
+
 
     .Banner {
         position: relative;

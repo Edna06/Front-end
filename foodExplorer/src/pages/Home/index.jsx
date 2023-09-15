@@ -23,10 +23,12 @@ export function Home(){
                         </div>
                     </section>
 
-                    {/* <Section/> */}
+                    <Section title="Refeições"/>
                 </Main>
 
-                <Footer />
+                 <footer>
+                     <Footer/>
+                </footer>
         </Container>
     )
 }
