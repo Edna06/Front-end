@@ -103,6 +103,11 @@ export const Form = styled.form`
             border: 1px solid ${({theme}) => theme.COLORS.LOGO_COLOR};
         }
 
+        > a {
+        text-decoration: none;
+        color: ${({theme})=> theme.COLORS.WHITE};
+        }
+
         >a:hover {
             color: ${({theme}) => theme.COLORS.GRAY_200};
         }

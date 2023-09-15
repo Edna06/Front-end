@@ -3,6 +3,8 @@ import { Container, Form } from './styles';
 import { Button } from '../../components/Button/index';
 import {Input} from '../../components/Inputt';
 
+import { Link } from 'react-router-dom';
+
 export function SignIn(){
   return(
     <Container>
@@ -37,9 +39,9 @@ export function SignIn(){
 
           <Button title="Entrar" />
 
-          <a>
-            Criar uma conta
-          </a>
+          <Link to='/register'>
+             Criar uma conta
+         </Link>
 
          </Form>
     </Container>

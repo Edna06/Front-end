@@ -1,7 +1,9 @@
 import { Container, Form } from './styles';
 
-import { Input } from '../../components/Inputt/'
-import { Button } from '../../components/Button/'
+import { Input } from '../../components/Inputt/';
+import { Button } from '../../components/Button/';
+
+import { Link } from 'react-router-dom';
 
 export function SignUp(){
     return(
@@ -46,9 +48,10 @@ export function SignUp(){
 
                 <Button title="Criar conta" />
 
-                <a>
-                Já tem uma conta?
-                </a>
+
+                <Link to='/'>
+                    Já tem uma conta?
+                </Link>
 
                 </Form>
         </Container>

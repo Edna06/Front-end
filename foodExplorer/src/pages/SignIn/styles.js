@@ -68,6 +68,11 @@ export const Form = styled.form`
         text-align: center;
     }
 
+    > a {
+        text-decoration: none;
+        color: ${({theme})=> theme.COLORS.WHITE};
+    }
+
     >a:hover{
       color: ${({theme}) => theme.COLORS.GRAY_200};
     }
