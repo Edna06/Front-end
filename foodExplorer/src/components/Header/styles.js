@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
+
+    grid-area: "header";
+
     width: 100%;
     height: 10.4rem;
     background-color: ${({theme}) => theme.COLORS.BRACKGROUND_HEADER};
@@ -11,6 +14,7 @@ export const Content = styled.div`
     align-items: center;
     gap: 3.2rem;
     padding: 2.4rem 12.3rem;
+    justify-content: space-between;
 
     button {
         max-width: 21.6rem;
