@@ -1,7 +1,10 @@
-import { Container, Main } from './styles'
+//imports
+import { Container, Main } from './styles';
 
-import { Header } from '../../components/Header/'
-import { Footer } from '../../components/Footer/'
+import { Header } from '../../components/Header/';
+import { Footer } from '../../components/Footer/';
+import { Card } from '../../components/Card/';
+import {Section} from '../../components/Section';
 
 export function Home(){
     return(
@@ -19,6 +22,8 @@ export function Home(){
                             </div>
                         </div>
                     </section>
+
+                    {/* <Section/> */}
                 </Main>
 
                 <Footer />

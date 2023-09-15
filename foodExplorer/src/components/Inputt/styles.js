@@ -20,7 +20,7 @@ export const Container = styled.div`
         border-radius: 0.5rem;
     }
 
-    > svg {
+    /* > svg {
             margin-left: 1.4rem;
-    }
+    } */
 `;

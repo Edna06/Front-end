@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
 
+    grid-area: "footer";
+
     width: 100%;
     min-height: 7.2rem;
 
@@ -17,6 +19,10 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 600px) {
+        padding: 1.8rem 0.5rem;
+    }
 `;
 
 export const Logo = styled.div`
@@ -32,6 +38,21 @@ export const Logo = styled.div`
         line-height: 3rem;
         opacity: 0.3;
     }
+
+    @media (max-width: 600px) {
+
+        gap: 0.2rem;
+
+        >svg{
+            width: 2.2rem;
+            height: 1.8rem;
+        }
+
+        >h2{
+            font-size: 1.52rem;
+        }
+    }
+
 `;
 
 export const Copyright = styled.span`
@@ -43,4 +64,11 @@ export const Copyright = styled.span`
         line-height: 1.8rem;
         color: ${({theme})=> theme.COLORS.WHITE_200}
     }
+
+
+    @media (max-width: 600px) {
+    >span {
+        font-size: 1.2rem;
+    }
+}
 `;
