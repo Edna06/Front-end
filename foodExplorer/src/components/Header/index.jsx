@@ -1,7 +1,7 @@
 //imports
-import { Container, Content, Logo, Logout, Search } from './styles'
+import { Container, Content, Logo, Logout, Search, User } from './styles'
 import { ButtonHeader } from '../../components/ButtonHeader'
-import { AiOutlineSearch } from 'react-icons/ai'
+import { AiOutlineSearch, AiOutlineUser} from 'react-icons/ai'
 import { FiLogOut } from 'react-icons/fi'
 
 
@@ -28,6 +28,10 @@ export function Header(){
             <ButtonHeader
                 title="Pedidos (0)"
             />
+
+            <User>
+            <AiOutlineUser/>
+            </User>
 
             <Logout to="/">
                 <FiLogOut />

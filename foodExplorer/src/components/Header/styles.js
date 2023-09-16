@@ -164,11 +164,32 @@ export const Search = styled.div`
     }
 `;
 
+export const User = styled.div`
+   svg {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+
+    :hover{
+        cursor: pointer;
+        color: ${({theme}) => theme.COLORS.LOGO_COLOR};
+    }
+
+`
+
+
+
 export const Logout = styled.div`
     svg {
       width: 3.2rem;
       height: 3.2rem;
     }
+
+    :hover{
+        cursor: pointer;
+        color: ${({theme}) => theme.COLORS.LOGO_COLOR};
+    }
+
 
     //adicionando responsividade
     @media (max-width: 850px) {
