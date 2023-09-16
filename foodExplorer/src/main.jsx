@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+import { OrderHistory } from './pages/OrderHistory';
+
 import { Routes } from './Routes';
 
 import {ThemeProvider} from 'styled-components';
@@ -16,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <GlobalStyles/>
 
     <Routes/>
+    {/* <OrderHistory/> */}
 
     </ThemeProvider>
   </React.StrictMode>
