@@ -3,7 +3,7 @@ import { TbReceipt } from 'react-icons/tb'
 
 export function ButtonHeader({title}){
     return(
-        <Container>
+        <Container to='/orderpage'>
             <TbReceipt />
             {title}
         </Container>

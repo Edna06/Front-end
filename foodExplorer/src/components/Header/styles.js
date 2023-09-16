@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 export const Container = styled.header`
 
@@ -84,14 +85,17 @@ export const Content = styled.div`
     }
 `;
 
-export const Logo = styled.div`
+export const Logo = styled(Link)`
     min-width: 21rem;
     gap: 1.2rem;
     display: flex;
     align-items: center;
 
+    text-decoration: none;
+    color: currentColor;
+
       > h1 {
-          font-size: 2.6rem;
+          font-size: 2.4rem;
       }
 
       > svg {
@@ -174,9 +178,7 @@ export const User = styled.div`
         cursor: pointer;
         color: ${({theme}) => theme.COLORS.LOGO_COLOR};
     }
-
 `
-
 
 
 export const Logout = styled.div`

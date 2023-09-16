@@ -1,11 +1,11 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const Container = styled.button`
+export const Container = styled(Link)`
     background-color: ${({theme})=> theme.COLORS.BUTTON};
     color: ${({theme})=> theme.COLORS.WHITE};
 
-    width: 100%;
-    /* width: 21.6rem; */
+    width: 29%;
     height: 5.6rem;
 
     border-radius: 0.5rem;

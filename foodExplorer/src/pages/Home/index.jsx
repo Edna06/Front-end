@@ -29,6 +29,6 @@ export function Home(){
                  <footer>
                      <Footer/>
                 </footer>
-        </Container>
+            </Container>
     )
 }

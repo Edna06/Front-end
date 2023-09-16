@@ -35,7 +35,7 @@ export function Card(){
                 <AiOutlineHeart />
             </button>
 
-            <img src="../../../src/assets/Pratos/TorradasdeParma.svg" alt="" />
+            <img src="../../../src/assets/Pratos/Torradas De Parma.png" alt="" />
 
 
             <h2>Torradas de Parma </h2>
