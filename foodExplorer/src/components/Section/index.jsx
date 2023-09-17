@@ -1,85 +1,46 @@
-//imports
-import { Card } from "../Card";
-import { Container } from "./styles";
+import { Container, Slider } from './styles'
+import { IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
 
-import {useState, useEffect} from "react";
+import { useRef } from 'react';
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import {register} from 'swiper/element/bundle';
+export function Section({type, children}){
+    const slider = useRef(null);
 
-register();
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+    function handleLeftClickSlider(event) {
+        event.preventDefault();
 
+        slider.current.scrollLeft -= slider.current.offsetWidth;
+      }
 
-export function Section({title}) {
+      function handleRightClickSlider(event) {
+        event.preventDefault();
 
-    const [slidePerView, setSlidePerView ] = useState(3);
+        slider.current.scrollLeft += slider.current.offsetWidth;
+      }
 
-    useEffect(()=> {
-
-        function handleResize(){
-            if(window.innerWidth < 720){
-                setSlidePerView(1);
-            }
-            else {
-                setSlidePerView(3);
-            }
-        }
-
-        handleResize();
-
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        }
-
-    }, [])
-
-    const divStyle = {
-        margin: '0px 0px 20px 30px',
-        width: '80%',
-        padding: '0px 0px 0px 4.5rem'
-        };
-
-
-    return (
+    return(
         <Container>
-
             <h2>
-                {title}
+                {type}
             </h2>
 
-            <Swiper
-            slidesPerView={slidePerView}
-            navigation
+            <Slider>
+                <button
+                className='ArrowBack'
+                onClick={handleLeftClickSlider}
+                >
+                    <IoIosArrowBack size={50}/>
+                </button>
+                <div ref={slider}>
+                {children}
+                </div>
 
-            style={divStyle}
-            >
-            <SwiperSlide>
-                <div className="slide-item">
-                    {<Card/>}
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div className="slide-item">
-                    <Card/>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div className="slide-item">
-                    <Card/>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div className="slide-item">
-                    <Card/>
-                </div>
-            </SwiperSlide>
-            </Swiper>
-    </Container>
-  );
+                <button
+                className='ArrowForward'
+                onClick={handleRightClickSlider}>
+                    <IoIosArrowForward size={50}/>
+                </button>
+            </Slider>
+        </Container>
+    )
 }

@@ -57,10 +57,28 @@ export const Main = styled.main`
         }
     }
     }
-    .CardWrapper{
-        display: flex;
-        gap: 2.7rem;
-        max-width: 136.8rem;
+    .dishesSections{
+    width: 100%;
+    height: 67.2rem;
+    justify-content: center;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 6rem;
+    margin-left: 15%;
+    margin-bottom: 6rem;
+
+
+        h2 {
+        font-weight: 500;
+        font-size: 3.2rem;
+        line-height: 4.5rem;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        margin-bottom: 3rem;
+    }
     }
 
        //adicionando responsividade

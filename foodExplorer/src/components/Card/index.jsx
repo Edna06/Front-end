@@ -7,7 +7,7 @@ import { Button } from '../Button/index'
 import { BiMinus, BiPlus} from 'react-icons/bi'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 
-export function Card(){
+export function Card({image, title, description, price, ...rest}){
 
   const [quantity, setQuantity] = useState(1);
 
@@ -35,14 +35,14 @@ export function Card(){
                 <AiOutlineHeart />
             </button>
 
-            <img src="../../../src/assets/Pratos/Torradas De Parma.png" alt="" />
+            <img src={Image} alt="" />
 
 
-            <h2>Torradas de Parma </h2>
+            <h2>{title}</h2>
 
-            <span>Presunto de parma e rúcula em um pão com fermentação natural.</span>
+            <span>{description}</span>
 
-            <h4>R$ 25,97</h4>
+            <h4>R$ {price}</h4>
 
 
 

@@ -1,40 +1,49 @@
-import styled from "styled-components";
-
-export const Container = styled.footer`
-    width: 100%;
-    height: 67.2rem;
-    justify-content: center;
-    padding: 0;
-
+import styled from 'styled-components'
+export const Container = styled.div`
     display: flex;
     flex-direction: column;
-
-    margin-top: 2rem;
-    margin-left: 15%;
-
-
+    gap: 4rem;
+    margin-bottom: 4rem;
 
     h2 {
         font-weight: 500;
         font-size: 3.2rem;
         line-height: 4.5rem;
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-        margin-bottom: 3rem;
     }
 
-    ::-webkit-scrollbar {
+
+::-webkit-scrollbar {
+    width: 0.1px;
+    height: 0.1px;
+}
+`;
+
+export const Slider = styled.div`
+    max-width: 112.2rem;
+    height: 58.2rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    > div {
+    display: flex;
+    gap: 2.7rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+        ::-webkit-scrollbar {
             display: none;
         }
-
-
-    .slide-item{
-
-        width: fit-content;
-        height: 100vh;
-
-        position: relative;
-
-
+  }
+    .ArrowBack,
+    .ArrowForward{
+        background: transparent;
+        color: ${({theme})=> theme.COLORS.WHITE};
+        z-index: 10;
+    }
+    .ArrowBack{
+        background: linear-gradient(270deg, rgba(0, 10, 15, 0.272541) 0%, #000A0F 100%);
+    }
+    .ArrowForward{
+        background: linear-gradient(90deg, rgba(0, 10, 15, 0.272541) 0%, #000A0F 100%);
     }
 `;

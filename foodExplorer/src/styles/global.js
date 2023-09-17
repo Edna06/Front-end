@@ -15,6 +15,17 @@ export default createGlobalStyle`
 body{
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND};
     color: ${({ theme }) => theme.COLORS.WHITE};
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.COLORS.BACKGROUND};
+}
+::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.COLORS.INPUT_BACKGROUND};
+    border-radius: 10px;
+}
 }
 
 body,
