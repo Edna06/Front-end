@@ -29,6 +29,7 @@ body{
 }
 
 body,
+textarea,
 input,
 ::placeholder{
     font-family: 'Roboto', sans-serif;

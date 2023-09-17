@@ -2,14 +2,19 @@ import { Container } from './styles'
 
 import { useState } from "react";
 
-import { Button } from '../Button/index'
+import { Button } from '../Button/index';
 
 import { BiMinus, BiPlus} from 'react-icons/bi'
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
+import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+
+import { useNavigate } from 'react-router-dom';
+
 
 export function Card({image, title, description, price, ...rest}){
 
-  const [quantity, setQuantity] = useState(1);
+    // const navigate = useNavigate();
+
+    const [quantity, setQuantity] = useState(1);
 
      //incrementando prato
      const increase = () => {
@@ -28,6 +33,10 @@ export function Card({image, title, description, price, ...rest}){
       setQuantity(count => count - 1);
   };
 
+  // function handleMoreDetailsAboutMeal(id){
+    //     navigate(`/details/${id}`)
+    // }
+
 
     return(
         <Container>
@@ -36,7 +45,6 @@ export function Card({image, title, description, price, ...rest}){
             </button>
 
             <img src={Image} alt="" />
-
 
             <h2>{title}</h2>
 
