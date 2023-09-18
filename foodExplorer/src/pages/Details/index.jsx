@@ -1,9 +1,10 @@
 //imports
-import { Container, Main, ButtonBack, Content } from './styles';
+import { Container, Main, ButtonBack, Content, AllIngredientCards } from './styles';
 
 import { Header } from '../../components/Header/';
 import { Footer } from '../../components/Footer/';
 import { Button } from '../../components/Button/';
+import {IngredientCard} from '../../components/IngredientCard/';
 
 import {IoIosArrowBack} from 'react-icons/io';
 import { BiMinus, BiPlus } from 'react-icons/bi';
@@ -65,29 +66,16 @@ export function Details(){
                 </div>
 
 
-                {/* REFAZER */}
-                <div className='ingredients'>
-                    <div className='ingredients-wrapper'>
+                {/* {data.ingredients && (
+                  <AllIngredientCards>
+                     {data.ingredients.map ((ingredient) => (
+                    <IngredientCard
+                     data={ingredient}
+                    />
+                ))}
+                </AllIngredientCards>
+                )} */}
 
-                        <span>alface</span>
-                    </div>
-
-                    <div className='ingredients-wrapper'>
-
-                        <span>tomate</span>
-                    </div>
-
-                    <div className='ingredients-wrapper'>
-
-                        <span>rabanete</span>
-                    </div>
-
-                    <div className='ingredients-wrapper'>
-
-                        <span>pão naan</span>
-                    </div>
-
-                </div>
 
                 <div className='AmountItemsAndBuy-wrapper'>
 

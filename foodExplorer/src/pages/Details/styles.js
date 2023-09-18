@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import {Link} from 'react-router-dom'
+import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 export const Container = styled.div`
     width: 100%;
@@ -11,7 +11,6 @@ export const Container = styled.div`
     "main"
     "footer";
 `;
-
 export const Main = styled.main`
     grid-area: "main";
     /* max-width: 136.8rem; */
@@ -23,23 +22,6 @@ export const Main = styled.main`
     padding: 2.4rem 12.3rem;
     gap: 8rem;
 `;
-
-// export const ButtonBack = styled.div`
-//     margin: 1.8rem 0;
-//     max-width: 136.8rem;
-//     display: flex;
-//     flex-direction: column;
-//     gap: 2.4rem;
-//     > a {
-//         background-color: transparent;
-//         color: ${({theme})=> theme.COLORS.GRAY};
-//         display: flex;
-//         align-items: center;
-//         font-size: 2.4rem;
-//         font-weight: 500;
-//         line-height: 3.6rem;
-//     }
-// `;
 
 export const Content = styled.div`
     width: 100%;
@@ -83,24 +65,7 @@ export const Content = styled.div`
             line-height: 3.4rem;
         }
     }
-    .ingredients{
-        display: flex;
-        gap: 4rem;
-    }
-    .ingredients-wrapper{
-        display: flex;
-        flex-direction: column;
-        > img{
-            width: 6rem;
-            height: 6rem;
-        }
-        > span {
-            font-size: 1.8rem;
-            line-height: 2.6rem;
-            font-weight: 300;
-            color: ${({theme}) => theme.COLORS.GRAY};
-        }
-    }
+
     .Amount {
             display: flex;
             align-items: center;
@@ -128,6 +93,11 @@ export const Content = styled.div`
             color: ${({theme})=> theme.COLORS.GRAY};
     }
 }
+`;
+
+export const AllIngredientCards = styled.section`
+    display: flex;
+    gap: 4rem;
 `;
 
 export const ButtonBack = styled(Link)`
