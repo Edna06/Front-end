@@ -1,9 +1,9 @@
 import {Container} from './styles'
 import { TbReceipt } from 'react-icons/tb'
 
-export function ButtonHeader({title}){
+export function ButtonHeader({title, ...rest}){
     return(
-        <Container to='/orderpage'>
+        <Container to='/orderpage' {...rest}>
             <TbReceipt />
             {title}
         </Container>

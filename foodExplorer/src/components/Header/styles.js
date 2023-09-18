@@ -135,9 +135,14 @@ export const Search = styled.div`
     background-color: ${({theme}) => theme.COLORS.INPUT_BACKGROUND};
     border-radius: 8px;
 
+    border: 2px solid transparent;
+    &:focus-within{
+        border: 2px solid ${({theme}) => theme.COLORS.LOGO_COLOR};
+    }
+
       > input {
           height: 4.8rem;
-          /* width: 100%; */
+          width: 100%;
           padding: 1.6rem 1.4rem;
           color: ${({theme}) => theme.COLORS.WHITE};
           background: ${({theme}) => theme.COLORS.INPUT_BACKGROUND};

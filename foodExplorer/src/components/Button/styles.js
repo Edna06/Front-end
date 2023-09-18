@@ -10,7 +10,7 @@ export const Container = styled.button`
     border-radius: 0.5rem;
     padding: 1.2rem 3.2rem;
 
-    &disabled{
+    &:disabled{
         opacity: 0.5;
     }
 `;
