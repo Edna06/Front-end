@@ -31,11 +31,11 @@ export function Home(){
 
                     {mainCourse.map((dish) => (
                         <Card
+                         data={dish}
                         key={String(dish.id)}
-                        image={dish.image}
-                        title={dish.title}
-                        price={dish.price}
-                        description={dish.description}
+                        // title={dish.title}
+                        // price={dish.price}
+                        // description={dish.description}
                         />
                     ))}
 
@@ -47,10 +47,11 @@ export function Home(){
 
                     {dessert.map((dish) => (
                         <Card
+                        data={dish}
                         key={String(dish.id)}
-                        title={dish.title}
-                        price={dish.price}
-                        description={dish.description}
+                        // title={dish.title}
+                        // price={dish.price}
+                        // description={dish.description}
                         />
                     ))}
 
@@ -62,10 +63,11 @@ export function Home(){
 
                     {drink.map((dish) => (
                         <Card
+                        data={dish}
                         key={String(dish.id)}
-                        title={dish.title}
-                        price={dish.price}
-                        description={dish.description}
+                        // title={dish.title}
+                        // price={dish.price}
+                        // description={dish.description}
                         />
                     ))}
                     </Section>

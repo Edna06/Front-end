@@ -7,12 +7,12 @@ import { Button } from '../Button/index';
 import { BiMinus, BiPlus} from 'react-icons/bi'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
+export function Card({data, ...rest}){
+    const imagem = `../../../src/assets/Pratos/${data.title}.png`
 
-export function Card({image, title, description, price, ...rest}){
-
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const [quantity, setQuantity] = useState(1);
 
@@ -39,19 +39,20 @@ export function Card({image, title, description, price, ...rest}){
 
 
     return(
-        <Container>
+        <Container {...rest}>
             <button className='FavoriteDish'>
                 <AiOutlineHeart />
             </button>
 
             <img src={Image} alt="" />
 
-            <h2>{title}</h2>
+            <Link to={`/details/${data.id}`}>
+                <h2>{data.title}</h2>
+            </Link>
 
-            <span>{description}</span>
+            <span>{data.description}</span>
 
-            <h4>R$ {price}</h4>
-
+            <h4>R$ {data.price}</h4>
 
 
             <div className='AmountItemsAndBuy-wrapper'>
