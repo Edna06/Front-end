@@ -5,7 +5,23 @@ import {Input} from '../../components/Inputt';
 
 import { Link } from 'react-router-dom';
 
+import { useAuth } from '../../Hooks/authContext';
+import { useState } from 'react';
+
 export function SignIn(){
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { signIn } = useAuth();
+
+  function handleSignIn(){
+    signIn({email, password})
+  }
+
+
+
+
   return(
     <Container>
 
@@ -26,6 +42,7 @@ export function SignIn(){
               title="Email"
               placeholder = "Ex.: exemplo@exemplo.com.br"
               required
+              OnChange={e=> setEmail(e.target.value)}
             />
 
             <Input
@@ -37,7 +54,9 @@ export function SignIn(){
               required
             />
 
-          <Button title="Entrar" />
+          <Button title="Entrar"
+          onClick={handleSignIn}
+          />
 
           <Link to='/register'>
              Criar uma conta
