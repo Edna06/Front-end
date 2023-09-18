@@ -109,19 +109,19 @@ export const SectionPrice = styled.div`
     width: 20%;
 `;
 
-export const ButtonBack = styled(Link)`
-    background-color: transparent;
-    color: ${({theme})=> theme.COLORS.GRAY};
+export const ButtonBack = styled.div`
+    margin: 1.8rem 0;
+    max-width: 136.8rem;
     display: flex;
-    align-items: center;
-    font-size: 2.4rem;
-    font-weight: 500;
-    line-height: 33.6rem;
-    position: absolute;
-    top: -2rem;
-    left: 10%;
-
-    :hover {
-        color: ${({theme})=> theme.COLORS.LOGO_COLOR};
+    flex-direction: column;
+    gap: 2.4rem;
+    > a {
+        background-color: transparent;
+        color: ${({theme})=> theme.COLORS.GRAY};
+        display: flex;
+        align-items: center;
+        font-size: 2.4rem;
+        font-weight: 500;
+        line-height: 3.6rem;
     }
 `;
