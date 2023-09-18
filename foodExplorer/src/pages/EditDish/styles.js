@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
     width: 100%;
@@ -15,7 +14,7 @@ export const Container = styled.div`
 export const Main = styled.main`
     grid-area: "main";
     /* max-width: 136.8rem; */
-    margin: 7rem auto 0;
+    margin: 2rem auto 0;
     width: 136.8rem;
 
     display: flex;
@@ -49,17 +48,48 @@ export const Form = styled.form`
             width: 223px;
         }
     }
+    .uploadImage {
+
+    #file {
+      color: ${({ theme }) => theme.COLORS.GRAY_100};
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+
+      .uploadImageSelect {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        border-radius: 0.5rem;
+        height: 4.8rem;
+        width: 30rem;
+        color: ${({ theme }) => theme.COLORS.WHITE};
+        border: 1px solid ${({ theme }) => theme.COLORS.WHITE};
+      }
+    }
+    input[type="file"] {
+    /* Retirando a mensagem padrão */
+    display: none;
+    }
+  }
 `;
 
 export const InputWrapper = styled.div`
     display: flex;
+
     gap: 3.2rem;
     flex-wrap: wrap;
     margin-bottom: 3.2rem;
     margin-top: 3.2rem;
 
     >div{
-        background-color: ${({theme})=> theme.COLORS.BACKGROUND}
+        background-color: ${({theme})=> theme.COLORS.BACKGROUND};
+
+    }
+
+    >div:nth-child(2){
+        width: 50rem;
     }
 `;
 
@@ -123,5 +153,15 @@ export const ButtonBack = styled.div`
         font-size: 2.4rem;
         font-weight: 500;
         line-height: 3.6rem;
+    }
+`;
+
+export const SendFormWithImage = styled.div`
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    > button{
+        /* width: 40%; */
     }
 `;
