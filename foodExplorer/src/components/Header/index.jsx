@@ -4,13 +4,19 @@ import { ButtonHeader } from '../../components/ButtonHeader';
 import { AiOutlineSearch, AiOutlineUser} from 'react-icons/ai';
 import { FiLogOut } from 'react-icons/fi';
 
-import {Link} from 'react-router-dom';
+import {useAuth} from '../../Hooks/authContext';
 
-import {useAuth} from '../../Hooks/authContext'
+import {Link, useNavigate} from 'react-router-dom';
 
 export function Header(){
 
     const {signOut} = useAuth();
+
+    const navigate = useNavigate()
+
+    function handleGoToProfilePage(){
+        navigate("/profile")
+    }
 
     return(
         <Container>
@@ -35,7 +41,7 @@ export function Header(){
                 title="Pedidos (0)"
             />
 
-            <User to='/profile' onClick={() => {console.log("estou clui")}}>
+            <User to='/profile' onClick={handleGoToProfilePage}>
             <AiOutlineUser/>
             </User>
 

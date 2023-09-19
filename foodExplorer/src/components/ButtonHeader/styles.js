@@ -5,7 +5,7 @@ export const Container = styled(Link)`
     background-color: ${({theme})=> theme.COLORS.BUTTON};
     color: ${({theme})=> theme.COLORS.WHITE};
 
-    width: 29%;
+    min-width: 20%;
     height: 5.6rem;
 
     border-radius: 0.5rem;
