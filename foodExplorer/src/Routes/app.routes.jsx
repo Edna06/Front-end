@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 // páginas que serão das rotas da aplicação
+import { Profile } from '../pages/Profile';
 import { Home } from '../pages/Home';
 import { Details } from '../pages/Details';
 import {OrderPage} from '../pages/OrderPage'
@@ -15,6 +16,8 @@ export function AppRoutes(){
             <Route path="/orderpage" element={<OrderPage/>}/>
             <Route path="/orderhistory" element={<OrderHistory/>}/>
             <Route path="/editdish" element={<EditDish/>}/>
+            <Route path="/profile" element={<Profile/>}/>
+
 
 
 

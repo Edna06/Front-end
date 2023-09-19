@@ -173,7 +173,9 @@ export const Search = styled.div`
     }
 `;
 
-export const User = styled.div`
+export const User = styled(Link)`
+   color: white;
+
    svg {
       width: 3.2rem;
       height: 3.2rem;

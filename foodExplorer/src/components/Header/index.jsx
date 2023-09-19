@@ -35,7 +35,7 @@ export function Header(){
                 title="Pedidos (0)"
             />
 
-            <User>
+            <User to='/profile' onClick={() => {console.log("estou clui")}}>
             <AiOutlineUser/>
             </User>
 
