@@ -58,6 +58,8 @@ export function Profile(){
         <Container>
             <Header />
 
+            { !user.isAdmin ?
+
             <Main>
                 <section className='profile-card'>
 
@@ -72,66 +74,139 @@ export function Profile(){
                     </svg>
                    */}
 
-                       <label htmlFor="avatar">
-                            <FiCamera />
+                        <label htmlFor="avatar">
+                                <FiCamera />
 
-                            <input
-                                id="avatar"
-                                type="file"
-                                onChange={handleChangeAvatar}
+                                <input
+                                    id="avatar"
+                                    type="file"
+                                    onChange={handleChangeAvatar}
+                                />
+                            </label>
+                        </Avatar>
+
+                        <InputProfile
+                        placeholder="Nome"
+                        type="text"
+                        icon={FiUser}
+                        value={name}
+                        onChange={e=> setName(e.target.value)}
+                        />
+
+                        <InputProfile
+                        placeholder="E-mail"
+                        type="text"
+                        icon={FiMail}
+                        value={email}
+                        onChange={e=> setEmail(e.target.value)}
+                        />
+
+                        <InputProfile
+                        placeholder="Senha atual"
+                        type="password"
+                        icon={FiLock}
+                        onChange={e=> setPasswordOld(e.target.value)}
+                        />
+
+                        <InputProfile
+                        placeholder="Nova senha"
+                        type="password"
+                        icon={FiLock}
+                        onChange={e=> setPasswordNew(e.target.value)}
+                        />
+
+                        <Button
+                        title="Salvar"
+                        onClick={handleUpdate}
+                        />
+
+                    </Form>
+
+                    </section>
+
+                    <section className='profile-option'>
+
+                            <Button
+                            title={"Histórico de pedidos"}
+                            onClick={handleGoToOrderHistoryPage}
                             />
-                        </label>
-                    </Avatar>
+                            <Button title={"Pratos favoritos"}/>
+                            <Button title={"Fale conosco"}/>
+                    </section>
+                </Main>
+                 :
+                <Main>
+                <section className='profile-card'>
+                    <Form>
 
-                    <InputProfile
-                    placeholder="Nome"
-                    type="text"
-                    icon={FiUser}
-                    value={name}
-                    onChange={e=> setName(e.target.value)}
-                    />
+                        <Avatar>
+                            <img
+                            src={avatar}
+                            alt="Foto do usuário"
+                            />
 
-                    <InputProfile
-                    placeholder="E-mail"
-                    type="text"
-                    icon={FiMail}
-                    value={email}
-                    onChange={e=> setEmail(e.target.value)}
-                    />
+                            <label htmlFor="avatar">
+                                <FiCamera />
 
-                    <InputProfile
-                    placeholder="Senha atual"
-                    type="password"
-                    icon={FiLock}
-                    onChange={e=> setPasswordOld(e.target.value)}
-                    />
+                                <input
+                                    id="avatar"
+                                    type="file"
+                                    onChange={handleChangeAvatar}
+                                />
+                            </label>
+                        </Avatar>
 
-                    <InputProfile
-                    placeholder="Nova senha"
-                    type="password"
-                    icon={FiLock}
-                    onChange={e=> setPasswordNew(e.target.value)}
-                    />
+                        <InputProfile
+                        placeholder="Nome"
+                        type="text"
+                        icon={FiUser}
+                        value={name}
+                        onChange={e=> setName(e.target.value)}
+                        />
 
-                    <Button
-                    title="Salvar"
-                    onClick={handleUpdate}
-                    />
+                        <InputProfile
+                        placeholder="E-mail"
+                        type="text"
+                        icon={FiMail}
+                        value={email}
+                        onChange={e=> setEmail(e.target.value)}
+                        />
 
-                 </Form>
+                        <InputProfile
+                        placeholder="Senha atual"
+                        type="password"
+                        icon={FiLock}
+                        onChange={e=> setPasswordOld(e.target.value)}
+                        />
 
+                        <InputProfile
+                        placeholder="Nova senha"
+                        type="password"
+                        icon={FiLock}
+                        onChange={e=> setPasswordNew(e.target.value)}
+                        />
+
+                        <Button
+                        title="Salvar alterações"
+                        onClick={handleUpdate}
+                        />
+
+                    </Form>
                 </section>
+
 
                 <section className='profile-option'>
 
                         <Button
-                        title={"Histórico de pedidos"}
+                        title={"admin"}
                         onClick={handleGoToOrderHistoryPage}
                         />
-                        <Button title={"Pratos favoritos"}/>
-                        <Button title={"Fale conosco"}/>
+                        <Button title={"admin"}/>
+                        <Button title={"admin"}/>
                 </section>
-            </Main>
+                </Main>
+
+                }
         </Container>
     )
 }

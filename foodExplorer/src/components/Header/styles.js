@@ -21,6 +21,15 @@ export const Content = styled.div`
         max-width: 21.6rem;
     }
 
+    .adm-header{
+        display: flex;
+        align-items: center;
+
+        svg{
+            margin-left: 5rem;
+        }
+    }
+
     //adicionando responsividade
     @media (max-width: 1140px){
             gap: 2rem;
@@ -211,6 +220,23 @@ export const Logout = styled.div`
         svg {
         width: 1.8rem;
         height: 1.8rem;
+        }
+    }
+`;
+
+export const Profile = styled.button`
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background: transparent;
+
+    > svg {
+        color: ${({theme}) => theme.COLORS.WHITE};
+        width: 3.2rem;
+        height: 3.2rem;
+        transition: all 400ms ease;
+        &:hover{
+            transform: scale(1.2);
         }
     }
 `;

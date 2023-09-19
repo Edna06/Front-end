@@ -3,13 +3,14 @@ import { Container, Form } from './styles';
 import { Button } from '../../components/Button/index';
 import {Input} from '../../components/Inputt';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { useAuth } from '../../Hooks/authContext';
 import { useState } from 'react';
 
 
 export function SignIn(){
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
