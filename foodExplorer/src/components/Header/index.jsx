@@ -6,8 +6,12 @@ import { FiLogOut } from 'react-icons/fi';
 
 import {Link} from 'react-router-dom';
 
+import {useAuth} from '../../Hooks/authContext'
 
 export function Header(){
+
+    const {signOut} = useAuth();
+
     return(
         <Container>
             <Content>
@@ -35,7 +39,7 @@ export function Header(){
             <AiOutlineUser/>
             </User>
 
-            <Logout to='/'>
+            <Logout onClick={signOut}>
                 <FiLogOut />
             </Logout>
 

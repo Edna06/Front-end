@@ -35,6 +35,17 @@ function AuthProvider({ children }){
         }
     }
 
+    //lógica para sair da conta
+    function signOut(){
+        // apagando as informações do usuário do localstorage
+        console.log("Sign out clicked")
+
+        localStorage.removeItem("@foodexplorer:token")
+        localStorage.removeItem("@foodexplorer:user")
+
+        setData({})
+    }
+
     useEffect(() => {
         // pegando  as informações que estão armazenadas no localstorage
         const token = localStorage.getItem("@foodexplorer:token")
@@ -53,7 +64,7 @@ function AuthProvider({ children }){
 
 
     return (
-        <AuthContext.Provider value={{ signIn, user: data.user }}>
+        <AuthContext.Provider value={{ signIn, signOut, user: data.user}}>
             { children }
         </AuthContext.Provider>
     )
