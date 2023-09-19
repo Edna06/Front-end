@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../../Hooks/authContext';
 import { useState } from 'react';
 
+
 export function SignIn(){
 
   const [email, setEmail] = useState("");
@@ -18,9 +19,6 @@ export function SignIn(){
   function handleSignIn(){
     signIn({email, password})
   }
-
-
-
 
   return(
     <Container>
@@ -42,7 +40,7 @@ export function SignIn(){
               title="Email"
               placeholder = "Ex.: exemplo@exemplo.com.br"
               required
-              OnChange={e=> setEmail(e.target.value)}
+              onChange={e=> setEmail(e.target.value)}
             />
 
             <Input
@@ -52,6 +50,7 @@ export function SignIn(){
               placeholder = "No mínimo 6 caracteres"
               minLength = "6"
               required
+              onChange={e=> setPassword(e.target.value)}
             />
 
           <Button title="Entrar"

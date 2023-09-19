@@ -1,17 +1,18 @@
-//imports
+// Imports
 import { createContext, useContext, useState } from "react";
 
-// API
-import { api } from '../Services/api'
+//utilizando a api
+import { api } from '../Services/api';
 
 export const AuthContext = createContext({});
 
 function AuthProvider({ children }){
     const [data, setData] = useState({});
 
+
     async function signIn({email, password}){
 
-        // login
+        // tentativa de iniciar uma sessão
         try{
             const responseAPI = await api.post('/sessions', {email, password})
 
@@ -20,6 +21,7 @@ function AuthProvider({ children }){
             api.defaults.headers.authorization = `Bearer ${token}`
 
             setData({user, token})
+
         } catch(error){
             if(error.response){
                 alert(error.response.data.message)
@@ -28,6 +30,7 @@ function AuthProvider({ children }){
             }
         }
     }
+
 
     return (
         <AuthContext.Provider value={{ signIn, user: data.user }}>
@@ -38,6 +41,7 @@ function AuthProvider({ children }){
 
 function useAuth(){
     const context = useContext(AuthContext);
+
     return context;
 }
 
