@@ -15,7 +15,22 @@ import { Link } from 'react-router-dom';
 
 export function EditDish(){
 
+    const [ingredients, setIngredients] = useState([]);
+    const [newIngredient, setNewIngredient] = useState("");
+
+    const [imageFile, setImageFile] = useState(null);
     const [description, setDescription] = useState("");
+
+    //lógica para asicionar um novo ingrediente
+    function handleAddIngredient(){
+        setIngredients(prevState => [...prevState, newIngredient])
+        setNewIngredient("")
+    }
+
+    //removendo um ingrediente específico
+    function handleRemoveIngredient(ingredientDeleted){
+        setIngredients(prevState => prevState.filter(ingredient => ingredient !== ingredientDeleted))
+    }
 
     return(
 
@@ -61,28 +76,36 @@ export function EditDish(){
                     <div className='inline'>
 
                     <SectionIngredients>
-
                         <p>Ingredientes</p>
 
                         <div className="ingredients">
-                            <NoteItem value="Alface"/>
-                            <NoteItem value="Tomate"/>
-                            <NoteItem value="Tomate"/>
-                            <NoteItem isNew placeholder='Adicionar'/>
+                           {
+                                ingredients.map((ingredient, index) => (
+                                <NoteItem
+                                key={String(index)}
+                                value={ingredient}
+                                onClick={() => handleRemoveIngredient(ingredient)}
+                                />
+                            ))
+                        }
+
+                        <NoteItem
+                            isNew
+                            placeholder='Adicionar'
+                            onChange={e => setNewIngredient(e.target.value)}
+                            value={newIngredient}
+                            onClick={handleAddIngredient}
+                        />
                         </div>
                     </SectionIngredients>
 
-                    <Input
-                        label="name"
-                        title="Preço"
-                        type="text"
-                        placeholder="R$ 00,00"
+                        <Input
+                            label="name"
+                            title="Preço"
+                            type="text"
+                            placeholder="R$ 00,00"
                         />
-
-
                     </div>
-
-
 
                     <TextArea>
                         <label htmlFor="">Descrição</label>
@@ -92,8 +115,6 @@ export function EditDish(){
                         >
                         </textarea>
                     </TextArea>
-
-
 
                     <Button
                     className='addButton'
