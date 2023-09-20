@@ -70,7 +70,7 @@ export function EditDish(){
                             <div className='uploadImageSelect'>
                                 <FiUpload size={24}/>
                                 <span>Selecione a imagem</span>
-                                <input id="image" type="file" onChange={e => setImage(e.target.files[0])}/>
+                                <input id="image" type="file" name='image' onChange={e => setImage(e.target.files[0])}/>
                             </div>
                         </label>
                         </div>

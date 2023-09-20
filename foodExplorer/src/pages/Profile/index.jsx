@@ -60,7 +60,11 @@ export function Profile(){
     }
 
     function handleGoToEditDishPage(){
-        navigate("/Edit")
+        navigate("/editdish")
+    }
+
+    function handleGoToDeleteDishPage(){
+        navigate("/deletedish")
     }
 
 
@@ -209,11 +213,15 @@ export function Profile(){
 
                         <Button
                         title={"Adicionar um prato"}
-                        onClick={handleGoToOrderHistoryPage}
+                        onClick={handleGoToAddDishPage}
                         />
                         <Button
                         title={"Editar um prato"}
                         onClick={handleGoToEditDishPage}
+                        />
+                        <Button
+                        title={"Deletar um prato"}
+                        onClick={handleGoToDeleteDishPage}
                         />
                 </section>
                 </Main>

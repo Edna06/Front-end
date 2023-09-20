@@ -7,9 +7,11 @@ import { FiLogOut } from 'react-icons/fi';
 
 import {useAuth} from '../../Hooks/authContext';
 
-import {Link, useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { api } from '../../Services/api';
 
-export function Header(){
+export function Header({search}){
 
     const {user, signOut} = useAuth();
 
@@ -43,6 +45,7 @@ export function Header(){
                 <input
                     placeholder = "Busque por pratos"
                     type = "text"
+                    onChange={search(e.target.value)}
                 />
             </Search>
 

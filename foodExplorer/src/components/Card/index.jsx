@@ -5,14 +5,12 @@ import { useState } from "react";
 import { Button } from '../Button/index';
 
 import { BiMinus, BiPlus} from 'react-icons/bi'
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+import { AiOutlineHeart } from 'react-icons/ai';
 
 import { useNavigate, Link } from 'react-router-dom';
 
 export function Card({data, ...rest}){
     const imagem = `../../../src/assets/Pratos/${data.title}.png`
-
-    const navigate = useNavigate();
 
     const [quantity, setQuantity] = useState(1);
 
@@ -33,10 +31,6 @@ export function Card({data, ...rest}){
       setQuantity(count => count - 1);
   };
 
-  // function handleMoreDetailsAboutMeal(id){
-    //     navigate(`/details/${id}`)
-    // }
-
 
     return(
         <Container {...rest}>
@@ -44,7 +38,7 @@ export function Card({data, ...rest}){
                 <AiOutlineHeart />
             </button>
 
-            <img src={Image} alt="" />
+            <img src={imagem} alt="" />
 
             <Link to={`/details/${data.id}`}>
                 <h2>{data.title}</h2>

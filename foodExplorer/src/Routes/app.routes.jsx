@@ -8,6 +8,7 @@ import { Details } from '../pages/Details';
 import {OrderPage} from '../pages/OrderPage'
 import {OrderHistory} from '../pages/OrderHistory'
 import { EditDish } from '../pages/EditDish';
+import { DeleteDish } from '../pages/DishDelete';
 
 export function AppRoutes(){
     return(
@@ -19,6 +20,8 @@ export function AppRoutes(){
             <Route path="/editdish" element={<EditDish/>}/>
             <Route path="/profile" element={<Profile/>}/>
             <Route path="/addDish/" element={<AddDish />} />
+            <Route path="/deletedish/" element={<DeleteDish />} />
+
 
         </Routes>
     )

@@ -37,6 +37,27 @@ export function AddDish(){
     }
 
     async function handleNewDish(){
+
+        if(!title){
+            return alert("Digite o nome do prato que deseja adicionar")
+        }
+
+        if(!price){
+            return alert("Adicione um valor ao prato")
+        }
+
+        if(!category){
+            return alert("Adicione uma categoria ao prato")
+        }
+
+        if(!description){
+            return alert("Adicione uma descrição para o prato")
+        }
+
+        if(newIngredient){
+            return alert("Você deixou um ingrediente no campo para adicionar")
+        }
+
         api.post("/adminDishes", { title, description, price, category, ingredients })
         alert("Prato criado com sucesso")
         navigate("/")
@@ -72,7 +93,7 @@ export function AddDish(){
                         />
 
                         <Input
-                        label="name"
+                        label="preço"
                         title="Preço"
                         type="text"
                         placeholder="R$ 00,00"
@@ -80,7 +101,7 @@ export function AddDish(){
                         />
 
                         <Input
-                        label="name"
+                        label="categoria"
                         title="Categoria"
                         type="text"
                         placeholder="Categoria"
@@ -134,7 +155,8 @@ export function AddDish(){
                             <div className='uploadImageSelect'>
                                 <FiUpload size={24}/>
                                 <span>Selecione a imagem</span>
-                                <input id="image" type="file"/>
+                                <input id="image" type="file"
+                                name='image'/>
                             </div>
                         </label>
                         </div>
