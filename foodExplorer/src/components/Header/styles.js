@@ -53,7 +53,6 @@ export const Content = styled.div`
             max-width: 12rem;
             font-size: 1.2rem;
             padding: 0.6rem 2rem;
-            /* gap: 0px; */
             > svg {
                 display: none
             }
@@ -103,13 +102,25 @@ export const Logo = styled(Link)`
     text-decoration: none;
     color: currentColor;
 
-      > h1 {
-          font-size: 2.4rem;
+
+    > h1 {
+        font-size: 2.4rem;
+    }
+
+    .applicationName{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+      > p{
+          color: ${({theme}) => theme.COLORS.LOGO_COLOR};
+          font-weight: bolder;
       }
+    }
 
       > svg {
-          width: 3rem;
-          height: 3rem;
+          width: 6rem;
+          height: 6rem;
       }
 
     @media (max-width: 1140px){
@@ -138,7 +149,7 @@ export const Logo = styled(Link)`
 `;
 
 export const Search = styled.div`
-    width: 100%;
+    width: 90rem;
     display: flex;
     align-items: center;
     background-color: ${({theme}) => theme.COLORS.INPUT_BACKGROUND};

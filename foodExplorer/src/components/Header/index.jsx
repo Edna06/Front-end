@@ -70,8 +70,22 @@ export function Header({search}){
                      <path d="M13.0635 0.306641L25.7096 7.60782V22.2102L13.0635 29.5114L0.417527 22.2102V7.60782L13.0635 0.306641Z" fill="#065E7C"/>
                      </svg>
 
+                    <div className="applicationName">
                      <h2>Food Explorer</h2>
+                     <p>Admin</p>
+                    </div>
                  </Logo>
+
+                 <Search
+                style={{width:"100rem"}}
+                  >
+                {<AiOutlineSearch size={20}/>}
+                    <input
+                        placeholder = "Busque por pratos"
+                        type = "text"
+                        onChange={e => {search(e.target.value)}}
+                    />
+                </Search>
 
                  <div className='adm-header'>
                  <Profile onClick={handleGoToProfilePage}>
