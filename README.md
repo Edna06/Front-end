@@ -15,8 +15,6 @@ O admin será o responsável por criar, editar e excluir os pratos.
   <a href="#memo-licença">Licença</a>
 </p>
 
-## 👾 Preview
-
 
 ## 📂 Repositorios
 
@@ -31,7 +29,7 @@ Back-End: https://github.com/Edna06/API---FoodExplorer
 
 ![Screenshot from 2023-09-20 19-28-39](https://github.com/Edna06/Front-end/assets/102126245/5d296ca5-8028-4b67-8687-7c9000f5d2df)
 
-
+Front-end: https://front-end-tau-eosin.vercel.app/
  
 </div>
 
