@@ -19,9 +19,20 @@ export function SignUp(){
     const navigate = useNavigate();
 
     function handleSignUp(){
+        // Validação de email
+        const regEx = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi
 
         if(!name || !email || !password){
             return alert("Preencha todos os campos!");
+        }
+
+        // validações
+        if(password.length < 6){
+            return alert("Por favor, sua senha precisa ter mais de 6 caracteres")
+        }
+
+        if(!regEx.test(email)){
+            return alert("o email inserido não é valido")
         }
 
         api.post("/users", { name, email, password })

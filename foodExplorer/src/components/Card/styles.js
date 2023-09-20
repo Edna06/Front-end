@@ -18,6 +18,15 @@ export const Container = styled.div`
     border: 1px solid rgba(0, 0, 0, 0.65);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
+    .admItensController{
+        display: flex;
+        gap: 2rem;
+
+        :hover {
+            filter: brightness(0.7);
+        }
+    }
+
 
     .FavoriteDish {
         background: transparent;
@@ -86,6 +95,7 @@ export const Container = styled.div`
                 width: 1.8rem;
                 height: 1.8rem;
             }
+          }
         }
-    }
+
 }`;

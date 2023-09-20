@@ -18,7 +18,7 @@ import { useAuth } from '../../Hooks/authContext';
 import { Unauthorized } from '../../components/Unauthorized';
 
 export function AddDish(){
-    const {user } = useAuth();
+    const { user } = useAuth();
     const navigate = useNavigate();
 
     const [title, setTitle] = useState("");
@@ -62,8 +62,15 @@ export function AddDish(){
         }
 
         api.post("/adminDishes", { title, description, price, category, ingredients })
-        alert("Prato criado com sucesso")
-        navigate("/")
+        .then(()=>{
+            alert("Prato criado com sucesso!")
+            navigate("/")
+        })
+        .catch(error => {
+            if(error.response){
+                alert("Não foi possível cadastrar")
+            }
+        })
     }
 
     return(

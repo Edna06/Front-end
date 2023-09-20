@@ -28,9 +28,6 @@ export function EditDish(){
 
     const [ingredients, setIngredients] = useState([]);
     const [newIngredient, setNewIngredient] = useState("");
-
-    const [imageFile, setImageFile] = useState(null);
-
     //lógica para asicionar um novo ingrediente
     function handleAddIngredient(){
         setIngredients(prevState => [...prevState, newIngredient])
@@ -77,7 +74,7 @@ export function EditDish(){
                             <div className='uploadImageSelect'>
                                 <FiUpload size={24}/>
                                 <span>Selecione a imagem</span>
-                                <input id="image" type="file" name='image' onChange={e => setImage(e.target.files[0])}/>
+                                <input id="image" type="file" />
                             </div>
                         </label>
                         </div>

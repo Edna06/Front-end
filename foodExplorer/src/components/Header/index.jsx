@@ -15,16 +15,16 @@ export function Header({search}){
 
     const {user, signOut} = useAuth();
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     function handleGoToProfilePage(){
         navigate("/profile")
-    }
+    };
 
     function handleWrapperSignOut(){
         signOut()
         navigate("/")
-    }
+    };
 
     return(
         <Container>

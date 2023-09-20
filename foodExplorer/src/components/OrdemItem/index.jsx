@@ -1,4 +1,5 @@
-import { Container } from './styles'
+//imports
+import { Container } from './styles';
 
 export function OrderItem({qntd, title, price}){
     let imagem = `../../../src/assets/Pratos/${title}.png`

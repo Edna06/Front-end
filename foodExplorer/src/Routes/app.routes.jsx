@@ -14,10 +14,10 @@ export function AppRoutes(){
     return(
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/details" element={<Details/>}/>
+            <Route path="/details/:id" element={<Details/>}/>
             <Route path="/orderpage" element={<OrderPage/>}/>
             <Route path="/orderhistory" element={<OrderHistory/>}/>
-            <Route path="/editdish" element={<EditDish/>}/>
+            <Route path="/editdish/:id" element={<EditDish/>}/>
             <Route path="/profile" element={<Profile/>}/>
             <Route path="/addDish/" element={<AddDish />} />
             <Route path="/deletedish/" element={<DeleteDish />} />

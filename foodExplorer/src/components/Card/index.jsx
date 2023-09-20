@@ -1,23 +1,33 @@
 import { Container } from './styles'
 
-import { useState } from "react";
-
 import { Button } from '../Button/index';
 
 import { BiMinus, BiPlus} from 'react-icons/bi'
 import { AiOutlineHeart } from 'react-icons/ai';
+import {BiEdit} from 'react-icons/bi'
 
-import { useNavigate, Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../Hooks/authContext';
+import { api } from '../../Services/api';
 
 export function Card({data, ...rest}){
-    const imagem = `../../../src/assets/Pratos/${data.title}.png`
+
+    const navigate = useNavigate();
+    const { user } = useAuth();
+
+    const imagem = `../../../src/assets/Pratos/${data.title}.png`;
 
     const [quantity, setQuantity] = useState(1);
+
+    function handleRefreshPage(){
+        navigate(0)
+    };
 
      //incrementando prato
      const increase = () => {
       if (quantity > 19) {
-          toast.warn("A quantidade máxima é de 20 unidades!")
+          alert("A quantidade máxima é de 20 unidades!")
           return;
       }
       setQuantity(count => count + 1);
@@ -31,12 +41,33 @@ export function Card({data, ...rest}){
       setQuantity(count => count - 1);
   };
 
+    function handleGoToEditPage(){
+        navigate('/editDish')
+    }
+
+    async function handleDeleteItem(){
+        const confirm = window.confirm("Deseja realmente deletar o prato do cardápio?")
+
+        if(confirm){
+            await api.delete(`/adminDishes/${data.id}`)
+            handleRefreshPage()
+        }
+    };
+
 
     return(
         <Container {...rest}>
+              {
+            !user.isAdmin ?
             <button className='FavoriteDish'>
                 <AiOutlineHeart />
             </button>
+            :
+            <button className='FavoriteDish'>
+                <BiEdit />
+            </button>
+
+              }
 
             <img src={imagem} alt="" />
 
@@ -48,6 +79,9 @@ export function Card({data, ...rest}){
 
             <h4>R$ {data.price}</h4>
 
+
+            {
+            !user.isAdmin ?
 
             <div className='AmountItemsAndBuy-wrapper'>
                 <div className='Amount'>
@@ -63,8 +97,23 @@ export function Card({data, ...rest}){
                     </button>
 
                 </div>
+
+
                 <Button title="incluir"/>
             </div>
+            :
+            <div className='admItensController'>
+                <Button
+                title="Deletar"
+                onClick={handleDeleteItem}
+                />
+
+                <Button
+                title="editar"
+                onClick={handleGoToEditPage}
+                />
+            </div>
+            }
+
         </Container>
-    )
-}
+    )};
