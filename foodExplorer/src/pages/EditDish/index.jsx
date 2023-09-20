@@ -30,6 +30,11 @@ export function EditDish(){
 
     const [ingredients, setIngredients] = useState([]);
     const [newIngredient, setNewIngredient] = useState("");
+
+    const [imageFile, setImageFile] = useState(null);
+
+
+
     //lógica para asicionar um novo ingrediente
     function handleAddIngredient(){
         setIngredients(prevState => [...prevState, newIngredient])
@@ -42,7 +47,18 @@ export function EditDish(){
     }
 
     async function handleEditDish(){
+
+        if (newIngredient) {
+            return alert("Você deixou um ingrediente no campo para adicionar, mas não clicou em adicionar.Clique para adicionar ou deixe o campo vazio.")
+        }
+
         api.put(`/adminDishes/${params.id}`, { title, description, price, category, ingredients })
+
+        const formData = new FormData();
+        formData.append("image", imageFile);
+
+        api.patch(`/adminDishes/dishImage/${params.id}`, formData)
+
         alert("Prato atualizado com sucesso")
         navigate("/")
     }
@@ -51,12 +67,13 @@ export function EditDish(){
         async function fetchDish() {
           const response = await api.get(`/dishes/${params.id}`)
 
-          const { title, description, category, price, ingredients } = response.data;
+          const { title, description, category, price, ingredients,imageFile } = response.data;
           setTitle(title);
           setDescription(description);
           setCategory(category);
           setPrice(price);
           setIngredients(ingredients.map(ingredient => ingredient.name));
+          setImageFile(image);
         }
 
         fetchDish();
@@ -86,12 +103,17 @@ export function EditDish(){
 
                 <SendFormWithImage>
                         <div className='uploadImage'>
+
                         <label id="file" htmlFor="image">
                             Imagem do prato
                             <div className='uploadImageSelect'>
                                 <FiUpload size={24}/>
                                 <span>Selecione a imagem</span>
-                                <input id="image" type="file" />
+                                <input
+                                id="image"
+                                type="file"
+                                onChange={e => setImageFile(e.target.files[0])}
+                                />
                             </div>
                         </label>
                         </div>

@@ -22,6 +22,8 @@ export const Container = styled.div`
         display: flex;
         gap: 2rem;
 
+        width: 100%;
+
         :hover {
             filter: brightness(0.7);
         }

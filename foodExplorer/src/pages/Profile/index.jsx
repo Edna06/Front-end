@@ -215,10 +215,7 @@ export function Profile(){
                         title={"Adicionar um prato"}
                         onClick={handleGoToAddDishPage}
                         />
-                        <Button
-                        title={"Editar um prato"}
-                        onClick={handleGoToEditDishPage}
-                        />
+
                         <Button
                         title={"Deletar um prato"}
                         onClick={handleGoToDeleteDishPage}

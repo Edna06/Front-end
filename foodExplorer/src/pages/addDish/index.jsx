@@ -24,11 +24,12 @@ export function AddDish(){
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
+    const [category, setCategory] = useState("");
 
     const [ingredients, setIngredients] = useState([]);
     const [newIngredient, setNewIngredient] = useState("");
-    const [category, setCategory] = useState("");
 
+    const [imageFile, setImageFile] = useState(null);
 
     function handleAddIngredient(){
         setIngredients(prevState => [...prevState, newIngredient])
@@ -61,17 +62,33 @@ export function AddDish(){
             return alert("Você deixou um ingrediente no campo para adicionar")
         }
 
-        api.post("/adminDishes", { title, description, price, category, ingredients })
-        .then(()=>{
-            alert("Prato criado com sucesso!")
-            navigate("/")
-        })
-        .catch(error => {
-            if(error.response){
-                alert("Não foi possível cadastrar")
-            }
-        })
+        // api.post("/adminDishes", { title, description, price, category, ingredients })
+        // .then(()=>{
+        //     alert("Prato criado com sucesso!")
+        //     navigate("/")
+        // })
+        // .catch(error => {
+        //     if(error.response){
+        //         alert("Não foi possível cadastrar")
+        //     }
+        // })
+
+        const formData = new FormData();
+        formData.append("image", imageFile);
+        formData.append("title", title);
+        formData.append("description", description);
+        formData.append("category", category);
+        formData.append("price", price);
+
+        ingredients.map(ingredient => (
+            formData.append("ingredients", ingredient)
+        ))
+
+        api.post("/adminDishes", formData)
+        alert("Prato cadastrado com sucesso");
+        navigate("/")
     }
+
 
     return(
 
@@ -166,8 +183,14 @@ export function AddDish(){
                             <div className='uploadImageSelect'>
                                 <FiUpload size={24}/>
                                 <span>Selecione a imagem</span>
-                                <input id="image" type="file"
-                                name='image'/>
+
+                                <input
+                                id="image"
+                                type="file"
+                                name='image'
+                                onChange={e => setImageFile(e.target.files[0])}
+                                />
+
                             </div>
                         </label>
                         </div>
@@ -181,7 +204,6 @@ export function AddDish(){
                 </Form>
             </Main>
                 :
-
             <Unauthorized/>
 
             }

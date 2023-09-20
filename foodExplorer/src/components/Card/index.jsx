@@ -64,10 +64,9 @@ export function Card({data, ...rest}){
             </button>
             :
             <button className='FavoriteDish'>
-                <BiEdit />
+                <BiEdit  onClick={handleGoToEditPage} />
             </button>
-
-              }
+            }
 
             <img src={imageURL} alt="" />
 
@@ -106,11 +105,6 @@ export function Card({data, ...rest}){
                 <Button
                 title="Deletar"
                 onClick={handleDeleteItem}
-                />
-
-                <Button
-                title="editar"
-                onClick={handleGoToEditPage}
                 />
             </div>
             }

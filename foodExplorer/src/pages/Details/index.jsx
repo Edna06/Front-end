@@ -9,17 +9,23 @@ import {IngredientCard} from '../../components/IngredientCard/';
 import {IoIosArrowBack} from 'react-icons/io';
 import { BiMinus, BiPlus } from 'react-icons/bi';
 
-import { Link, useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import {api} from '../../Services/api'
+import { useAuth } from '../../Hooks/authContext';
 
 import { itemsDatabase } from '../../utils/database';
 
 export function Details(){
 
-        const [quantity, setQuantity] = useState(1)
+        const [quantity, setQuantity] = useState(1);
 
         const { id } = useParams();
         const data = itemsDatabase.find((item) => item.id === Number(id));
+
+        const params = useParams();
+        const navigate = useNavigate();
+        const { user } = useAuth();
 
         function handleAddItem() {
             setQuantity (quantity+1)
@@ -30,6 +36,19 @@ export function Details(){
             if(quantity == 1){
                 setQuantity(1)
             }
+        }
+
+        async function handleDeleteDish(){
+            const confirm = window.confirm("Deseja realmente deletar o prato do cardápio?")
+
+            if(confirm){
+                await api.delete(`/adminDishes/${data.id}`)
+                navigate(-1)
+            }
+        }
+
+        function handleGoToEditPage(){
+            navigate(`/editDish/${data.id}`)
         }
 
     return(
@@ -58,10 +77,15 @@ export function Details(){
                 data={ingredient}
                 />
             ))}
-            </AllIngredientCards>
+              </AllIngredientCards>
             )}
             <div className='AmountItemsAndBuy-wrapper'>
                 <h4>R$ {data.price}</h4>
+
+
+                {
+                    !user.isAdmin ?
+
                 <div className='Amount'>
                     <button
                     className='MinusItem'
@@ -79,6 +103,12 @@ export function Details(){
                     </button>
                     <Button title="incluir"/>
                 </div>
+                :
+                <div className='Amount'>
+                    <Button title="Deletar" onClick={handleDeleteDish} />
+                    <Button title="Editar" onClick={handleGoToEditPage} />
+                </div>
+                }
             </div>
         </div>
         </Content>
