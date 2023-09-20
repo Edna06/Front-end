@@ -16,7 +16,7 @@ export function Card({data, ...rest}){
     const navigate = useNavigate();
     const { user } = useAuth();
 
-    const imagem = `../../../src/assets/Pratos/${data.title}.png`;
+    const imageURL = `${api.defaults.baseURL}/files/dishFiles/${data.image}`;
 
     const [quantity, setQuantity] = useState(1);
 
@@ -42,7 +42,7 @@ export function Card({data, ...rest}){
   };
 
     function handleGoToEditPage(){
-        navigate('/editDish')
+        navigate(`/editDish/${data.id}`)
     }
 
     async function handleDeleteItem(){
@@ -69,7 +69,7 @@ export function Card({data, ...rest}){
 
               }
 
-            <img src={imagem} alt="" />
+            <img src={imageURL} alt="" />
 
             <Link to={`/details/${data.id}`}>
                 <h2>{data.title}</h2>

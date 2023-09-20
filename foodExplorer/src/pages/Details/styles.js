@@ -97,7 +97,7 @@ export const Content = styled.div`
 
 export const AllIngredientCards = styled.section`
     display: flex;
-    gap: 4rem;
+    gap: 1.2rem;
 `;
 
 

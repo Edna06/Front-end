@@ -127,10 +127,8 @@ export function AddDish(){
                         <div className="titleSectionIngredients">
                             <p>Ingredientes</p>
                         </div>
+
                     <SectionIngredients>
-
-
-
                         {
                             ingredients.map((ingredient, index) => (
                                 <NoteItem
