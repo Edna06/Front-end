@@ -11,15 +11,21 @@ import { FiUpload } from 'react-icons/fi';
 
 import { useState } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export function EditDish(){
+
+    const navigate = useNavigate();
+
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+    const [price, setPrice] = useState("");
+    const [category, setCategory] = useState("");
 
     const [ingredients, setIngredients] = useState([]);
     const [newIngredient, setNewIngredient] = useState("");
 
     const [imageFile, setImageFile] = useState(null);
-    const [description, setDescription] = useState("");
 
     //lógica para asicionar um novo ingrediente
     function handleAddIngredient(){
@@ -31,6 +37,13 @@ export function EditDish(){
     function handleRemoveIngredient(ingredientDeleted){
         setIngredients(prevState => prevState.filter(ingredient => ingredient !== ingredientDeleted))
     }
+
+    async function handleEditDish(){
+        api.post("/adminDishes", { title, description, price, category, ingredients })
+        alert("Prato criado com sucesso")
+        navigate("/")
+    }
+
 
     return(
 
@@ -57,7 +70,7 @@ export function EditDish(){
                             <div className='uploadImageSelect'>
                                 <FiUpload size={24}/>
                                 <span>Selecione a imagem</span>
-                                <input id="image" type="file" onChange={e => setImageFile(e.target.files[0])}/>
+                                <input id="image" type="file" onChange={e => setImage(e.target.files[0])}/>
                             </div>
                         </label>
                         </div>
@@ -68,6 +81,15 @@ export function EditDish(){
                         title="Nome do prato"
                         type="text"
                         placeholder="Ex.: Salada Ceasar"
+                        onChange={e => setTitle(e.target.value)}
+                        />
+
+                        <Input
+                        label="name"
+                        title="Categoria"
+                        type="text"
+                        placeholder="Categoria"
+                        onChange={e => setCategory(e.target.value)}
                         />
 
                     </InputWrapper>
@@ -90,7 +112,7 @@ export function EditDish(){
                         }
 
                         <NoteItem
-                            isNew
+                            isnew
                             placeholder='Adicionar'
                             onChange={e => setNewIngredient(e.target.value)}
                             value={newIngredient}
@@ -104,6 +126,7 @@ export function EditDish(){
                             title="Preço"
                             type="text"
                             placeholder="R$ 00,00"
+                            onChange={e=> setPrice(e.target.value)}
                         />
                     </div>
 
@@ -119,6 +142,7 @@ export function EditDish(){
                     <Button
                     className='addButton'
                     title="Adicionar"
+                    onClick={handleEditDish}
                     />
 
                 </Form>

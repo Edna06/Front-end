@@ -54,6 +54,16 @@ export function Profile(){
         setAvatar(imagePreview)
     }
 
+
+    function handleGoToAddDishPage(){
+        navigate("/addDish")
+    }
+
+    function handleGoToEditDishPage(){
+        navigate("/Edit")
+    }
+
+
     return(
         <Container>
             <Header />
@@ -198,11 +208,13 @@ export function Profile(){
                 <section className='profile-option'>
 
                         <Button
-                        title={"admin"}
+                        title={"Adicionar um prato"}
                         onClick={handleGoToOrderHistoryPage}
                         />
-                        <Button title={"admin"}/>
-                        <Button title={"admin"}/>
+                        <Button
+                        title={"Editar um prato"}
+                        onClick={handleGoToEditDishPage}
+                        />
                 </section>
                 </Main>
 
