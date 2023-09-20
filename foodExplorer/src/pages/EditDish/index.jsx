@@ -1,4 +1,4 @@
-import { Container, Main, ButtonBack, Form, InputWrapper, TextArea, SectionIngredients, SendFormWithImage } from './styles';
+import { Container, Main, ButtonBack, Form, InputWrapper, TextArea, SectionIngredients, SendFormWithImage, MainUser } from './styles';
 
 import { Header } from '../../components/Header/';
 import { Footer } from '../../components/Footer/';
@@ -10,11 +10,13 @@ import { IoIosArrowBack } from 'react-icons/io';
 import { FiUpload } from 'react-icons/fi';
 
 import { useState } from 'react';
+import { useAuth } from '../../Hooks/authContext';
 
 import { Link, useNavigate } from 'react-router-dom';
 
 export function EditDish(){
 
+    const {user } = useAuth();
     const navigate = useNavigate();
 
     const [title, setTitle] = useState("");
@@ -49,6 +51,9 @@ export function EditDish(){
 
         <Container>
             <Header />
+
+        {
+            user.isAdmin ?
 
             <Main>
                 <ButtonBack>
@@ -148,6 +153,15 @@ export function EditDish(){
                 </Form>
 
             </Main>
+            :
+            <MainUser>
+                <h1>Error 401</h1>
+                <h2>
+                    <span>Oops!</span>
+                </h2>
+                <h3>Você não possui autorização para acessar essa página!</h3>
+            </MainUser>
+        }
 
             <Footer />
         </Container>

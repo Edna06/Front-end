@@ -45,7 +45,7 @@ export function Header({search}){
                 <input
                     placeholder = "Busque por pratos"
                     type = "text"
-                    onChange={search(e.target.value)}
+                    onChange={e => {search(e.target.value)}}
                 />
             </Search>
 
