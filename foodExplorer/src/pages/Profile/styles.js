@@ -33,8 +33,6 @@ export const Main = styled.main`
         gap: 5rem;
         padding: 8rem 16rem;
 
-
-
         button{
             box-shadow: 0px 0px 8px 2px rgba(255, 255, 255, 0.1);
             height: 7rem;
