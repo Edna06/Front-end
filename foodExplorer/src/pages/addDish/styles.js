@@ -14,9 +14,8 @@ export const Container = styled.div`
 
 >p{
   color: ${({theme}) => theme.COLORS.GRAY_100};
-}
-}
-`;
+    }
+}`;
 
 export const Main = styled.main`
     grid-area: "main";
@@ -144,25 +143,4 @@ export const SendFormWithImage = styled.div`
 
     > button{
         width: 40%;
-    }
-`;
-
-export const MainUser = styled.main`
-    grid-area: "main";
-    margin: 0 auto;
-    width: 70rem;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 2rem;
-    padding: 2.4rem 12.3rem;
-    h2 {
-        font-size: 9rem;
-        >span{
-            color: ${({theme})=> theme.COLORS.TEXT_DELETE}
-        }
-    }
-`;
+    }`;

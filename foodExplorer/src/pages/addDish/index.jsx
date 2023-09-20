@@ -1,5 +1,5 @@
 //imports
-import { Container, Main, ButtonBack, Form, InputWrapper, TextArea, SectionIngredients, SendFormWithImage, MainUser } from './styles';
+import { Container, Main, ButtonBack, Form, InputWrapper, TextArea, SectionIngredients, SendFormWithImage } from './styles';
 
 import { Header } from '../../components/Header/';
 import { Footer } from '../../components/Footer/';
@@ -14,6 +14,8 @@ import { FiUpload } from 'react-icons/fi';
 import { useState } from 'react';
 import { api } from '../../Services/api';
 import { useAuth } from '../../Hooks/authContext';
+
+import { Unauthorized } from '../../components/Unauthorized';
 
 export function AddDish(){
     const {user } = useAuth();
@@ -174,13 +176,9 @@ export function AddDish(){
                 </Form>
             </Main>
                 :
-            <MainUser>
-                <h1>Error 401</h1>
-                <h2>
-                    <span>Oops!</span>
-                </h2>
-                <h3>Você não possui autorização para acessar essa página!</h3>
-            </MainUser>
+
+            <Unauthorized/>
+
             }
 
             <Footer />

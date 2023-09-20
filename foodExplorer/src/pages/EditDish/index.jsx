@@ -1,4 +1,4 @@
-import { Container, Main, ButtonBack, Form, InputWrapper, TextArea, SectionIngredients, SendFormWithImage, MainUser } from './styles';
+import { Container, Main, ButtonBack, Form, InputWrapper, TextArea, SectionIngredients, SendFormWithImage } from './styles';
 
 import { Header } from '../../components/Header/';
 import { Footer } from '../../components/Footer/';
@@ -13,6 +13,8 @@ import { useState } from 'react';
 import { useAuth } from '../../Hooks/authContext';
 
 import { Link, useNavigate } from 'react-router-dom';
+
+import { Unauthorized } from '../../components/Unauthorized';
 
 export function EditDish(){
 
@@ -154,13 +156,7 @@ export function EditDish(){
 
             </Main>
             :
-            <MainUser>
-                <h1>Error 401</h1>
-                <h2>
-                    <span>Oops!</span>
-                </h2>
-                <h3>Você não possui autorização para acessar essa página!</h3>
-            </MainUser>
+            <Unauthorized/>
         }
 
             <Footer />
