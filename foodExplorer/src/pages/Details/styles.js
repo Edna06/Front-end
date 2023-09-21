@@ -13,7 +13,6 @@ export const Container = styled.div`
 `;
 export const Main = styled.main`
     grid-area: "main";
-    /* max-width: 136.8rem; */
     margin: 0 auto;
     width: 136.8rem;
 
@@ -21,6 +20,13 @@ export const Main = styled.main`
     flex-direction: column;
     padding: 2.4rem 12.3rem;
     gap: 8rem;
+
+    @media (max-width: 600px) {
+        width: 100%;
+
+        padding: 2.4rem 2rem;
+        gap: 4rem;
+    }
 `;
 
 export const Content = styled.div`
@@ -93,7 +99,57 @@ export const Content = styled.div`
             color: ${({theme})=> theme.COLORS.GRAY};
     }
 }
-`;
+
+@media (max-width: 600px) {
+
+    height: 100%;
+
+    margin: -3rem 0 6rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    gap: 6rem;
+
+    img {
+        width: 30rem;
+        height: 30rem;
+    }
+    h4 {
+        font-size: 2.9rem;
+    }
+    .details{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 30.3rem;
+        height: fit-content;
+    }
+    .details-wrapper{
+        > h2 {
+            font-size: 3rem;
+        }
+        > p {
+            font-size: 2rem;
+            line-height: 2rem;
+        }
+    }
+
+    .AmountItemsAndBuy-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 2.4rem;
+
+}
+
+
+
+}`;
 
 export const AllIngredientCards = styled.section`
     display: flex;
@@ -116,4 +172,11 @@ export const ButtonBack = styled.div`
         font-weight: 500;
         line-height: 3.6rem;
     }
+
+    @media (max-width: 600px) {
+        margin: 1rem 0 3rem;
+        > a {
+        font-size: 1.9rem;
+    }
+}
 `;

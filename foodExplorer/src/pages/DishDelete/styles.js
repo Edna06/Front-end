@@ -31,14 +31,8 @@ export const Main = styled.main`
 
             &:focus-within{
                 border: 2px solid ${({theme}) => theme.COLORS.LOGO_COLOR};
-            }
-        }
+      }}
     }
-
-
-
-
-
         h2 {
             font-size: 2rem;
 
@@ -47,4 +41,27 @@ export const Main = styled.main`
             }
         }
 
+
+
+
+        @media (max-width: 600px) {
+
+        width: 100%;
+        padding: 2rem;
+
+        display: flex;
+        text-align: center;
+        align-items: center;
+
+        h2 {
+                width: 30rem;
+                font-size: 2rem;
+
+                font-style: oblique;
+
+                >span{
+                    color: ${({theme})=> theme.COLORS.TEXT_DELETE}
+                }
+            }
+        }
 `;
