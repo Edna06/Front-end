@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom';
 export const Container = styled.header`
 
     grid-area: "header";
-
     width: 100%;
     height: 10.4rem;
     background-color: ${({theme}) => theme.COLORS.BRACKGROUND_HEADER};
@@ -30,67 +29,50 @@ export const Content = styled.div`
         }
     }
 
-    //adicionando responsividade
-    @media (max-width: 1140px){
-            gap: 2rem;
-            padding: 2.4rem 6rem;
-        > a {
-            min-width: 12rem;
-        }
+    .options{
+        display: flex;
+        align-items: center;
+        gap: 5rem;
+
     }
 
-    @media (max-width: 850px) {
-        gap: 1.6rem;
-        padding: 2.4rem 3rem;
+    //adicionando responsividade
+    @media (max-width: 1140px){
+        gap: 2rem;
+        padding: 2.4rem 6rem;
 
         > a {
             min-width: 12rem;
-            font-size: 1.4rem;
-            text-align: center;
-        }
-
-        button {
-            max-width: 12rem;
-            font-size: 1.2rem;
-            padding: 0.6rem 2rem;
-            > svg {
-                display: none
-            }
         }
     }
 
     @media (max-width: 600px) {
 
+    gap: 0.5rem;
+    padding: 2rem 2rem;
+
+    > a {
+            min-width: 0rem;
+        }
+        .options{
         gap: 1rem;
-        padding: 2.4rem 1.5rem;
-
-        > a {
-            min-width: 8rem;
-            font-size: 1.2rem;
-        }
-
-        button {
-            max-width: 12rem;
-            font-size: 1.2rem;
-            padding: 0.4rem 1rem;
-        }
     }
 
-    @media (max-width: 430px) {
 
-        gap: 0.rem;
-        padding: 2.4rem 1rem;
+    .adm-header{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
 
-        > a {
-            min-width: 6rem;
-            font-size: 1.2rem;
+        svg{
+            margin-left: 3rem;
         }
 
-        button {
-            max-width: 8rem;
-            font-size: 1rem;
+        >div:nth-child(1){
+            color: blue;
         }
-    }
+    }}
+
 `;
 
 export const Logo = styled(Link)`
@@ -123,30 +105,37 @@ export const Logo = styled(Link)`
           height: 6rem;
       }
 
-    @media (max-width: 1140px){
-    min-width: 18rem;
 
-      > h1 {
-          font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 850px) {
-    min-width: 6rem;
-    gap: 0rem;
-
-      h1{
-        display: none;
-    }
-      > svg {
-        width: 6rem;
-        height: 6rem;
-      }
-}
     @media (max-width: 600px) {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0rem;
+
+        > h1 {
+        font-size: 1rem;
     }
-`;
+
+    .applicationName{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        h2{
+            font-size: 1.5rem;
+        }
+
+      > p{
+          font-weight: bolder;
+          font-size: 1rem;
+      }
+    }
+
+      > svg {
+          width: 2rem;
+          height: 2rem;
+      }
+
+}`;
 
 export const Search = styled.div`
     width: 90rem;
@@ -175,20 +164,18 @@ export const Search = styled.div`
           fill: ${({theme}) => theme.COLORS.GRAY_100};;
       }
 
-    @media (max-width: 850px) {
-        > input {
-            font-size: 1.4rem;
-            padding: 1.2rem 1rem;
-        }
-    }
     @media (max-width: 600px) {
+
+        display: none;
+
         > input {
-            padding: 0.8rem 0.6rem;
-            font-size: 1.4rem;
+            width: 0;
+            height: 0;
+            display: none;
         }
+
         > svg {
-        margin-left: 1rem;
-        fill: ${({theme}) => theme.COLORS.GRAY_100};;
+        display: none;
         }
     }
 `;
@@ -197,13 +184,21 @@ export const User = styled(Link)`
    color: white;
 
    svg {
-      width: 3.2rem;
-      height: 3.2rem;
+      width: 3.5rem;
+      height: 3.5rem;
     }
 
     :hover{
         cursor: pointer;
         color: ${({theme}) => theme.COLORS.LOGO_COLOR};
+    }
+
+    @media (max-width: 600px) {
+
+        svg {
+            margin-left: 0rem;
+            margin-right: 0rem;
+        }
     }
 `
 
@@ -221,18 +216,12 @@ export const Logout = styled.div`
 
 
     //adicionando responsividade
-    @media (max-width: 850px) {
-        svg {
-        width: 2.2rem;
-        height: 2.2rem;
-        }
-    }
     @media (max-width: 600px) {
-        svg {
-        width: 1.8rem;
-        height: 1.8rem;
-        }
-    }
+
+    svg {
+      width: 3.2rem;
+      height: 3.2rem;
+    }}
 `;
 
 export const Profile = styled.button`
@@ -240,6 +229,7 @@ export const Profile = styled.button`
     border: none;
     outline: none;
     background: transparent;
+
 
     > svg {
         color: ${({theme}) => theme.COLORS.WHITE};
@@ -251,4 +241,5 @@ export const Profile = styled.button`
         }
     }
 `;
+
 

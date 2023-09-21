@@ -54,7 +54,7 @@ export function SignUp(){
                 <path d="M22.0318 0.216515L43.4349 12.0919V35.8426L22.0318 47.7179L0.628698 35.8426V12.0919L22.0318 0.216515Z" fill="#065E7C"/>
                 </svg>
 
-                <h1>food explorer</h1>
+                <h1>Food Explorer</h1>
 
             </div>
 

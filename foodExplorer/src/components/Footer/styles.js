@@ -20,8 +20,9 @@ export const Content = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    @media (max-width: 600px) {
-        padding: 1.8rem 0.5rem;
+    @media (max-width: 600px){
+        max-width: 70.8rem;
+        padding: 2.4rem 2rem;
     }
 `;
 
@@ -39,20 +40,20 @@ export const Logo = styled.div`
         opacity: 0.3;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 600px){
+        gap: 0.8rem;
 
-        gap: 0.2rem;
-
-        >svg{
-            width: 2.2rem;
-            height: 1.8rem;
+        svg{
+            width: 2rem;
+            height: 2rem;
         }
 
-        >h2{
-            font-size: 1.52rem;
+        >h2 {
+            font-size: 2rem;
+            line-height: 2rem;
+            line-height: 1.5rem;
         }
     }
-
 `;
 
 export const Copyright = styled.span`
@@ -66,9 +67,9 @@ export const Copyright = styled.span`
     }
 
 
-    @media (max-width: 600px) {
-    >span {
+    @media (max-width: 600px){
+    > span {
         font-size: 1.2rem;
+        line-height: 1rem;
     }
-}
-`;
+}`;

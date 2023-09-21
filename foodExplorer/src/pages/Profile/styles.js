@@ -9,6 +9,10 @@ export const Container = styled.div`
     grid-area:
     "header"
     "main";
+
+    @media (max-width: 600px) {
+    margin-bottom: 32rem;
+    }
 `;
 
 export const Main = styled.main`
@@ -25,19 +29,50 @@ export const Main = styled.main`
         background-color: ${({theme}) => theme.COLORS.BACKGROUND_PAYMENTBUTTON};
     }
     .profile-option{
+
         width: 67%;
 
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         gap: 5rem;
-        padding: 8rem 16rem;
 
         button{
             box-shadow: 0px 0px 8px 2px rgba(255, 255, 255, 0.1);
             height: 7rem;
+            width: 70%;
         }
     }
+
+    @media (max-width: 600px) {
+        width: fit-content;
+        gap: 0rem;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 3rem;
+
+        .profile-card{
+         width: 100%;
+
+         box-shadow: none;
+         border-bottom: 2px solid  rgba(255, 255, 255, 0.1) ;
+          }
+
+
+        .profile-option{
+            width: 100%;
+            align-items: center;
+            gap: 3rem;
+            padding: 8rem 0;
+
+            button{
+            width: 100%;
+        }
+        }}
+
 `;
 
 export const Form = styled.form`

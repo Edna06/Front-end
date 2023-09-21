@@ -3,13 +3,12 @@ import { Container, Content, Logo, Logout, Search, User,Profile } from './styles
 import { ButtonHeader } from '../../components/ButtonHeader';
 import { AiOutlineSearch, AiOutlineUser} from 'react-icons/ai';
 import { RiAdminLine } from 'react-icons/ri'
-import { FiLogOut } from 'react-icons/fi';
+import { FiLogOut, FiPlus } from 'react-icons/fi';
+import { TbReceipt } from 'react-icons/tb';
 
 import {useAuth} from '../../Hooks/authContext';
 
 import { useNavigate} from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { api } from '../../Services/api';
 
 export function Header({search}){
 
@@ -49,10 +48,11 @@ export function Header({search}){
                 />
             </Search>
 
-
+            <div className="options">
             <ButtonHeader
+                icon={<TbReceipt/>}
                 title="Pedidos (0)"
-            />
+                />
 
             <User to='/profile' onClick={handleGoToProfilePage}>
             <AiOutlineUser/>
@@ -61,6 +61,7 @@ export function Header({search}){
             <Logout onClick={handleWrapperSignOut}>
                 <FiLogOut />
             </Logout>
+            </div>
 
             </Content>
                     :
@@ -87,7 +88,11 @@ export function Header({search}){
                     />
                 </Search>
 
+
                  <div className='adm-header'>
+
+                 <ButtonHeader title="Adicionar" to="/addDish" icon={<FiPlus/>}/>
+
                  <Profile onClick={handleGoToProfilePage}>
                      <RiAdminLine />
                  </Profile>
@@ -95,6 +100,7 @@ export function Header({search}){
                  <Logout onClick={handleWrapperSignOut}>
                      <FiLogOut />
                  </Logout>
+
                  </div>
 
 
