@@ -11,21 +11,26 @@ export const Container = styled.div`
     "footer";
 
     .titleSectionIngredients{
-
->p{
-  color: ${({theme}) => theme.COLORS.GRAY_100};
-    }
+    >p{
+    color: ${({theme}) => theme.COLORS.GRAY_100};
+        }
 }`;
 
 export const Main = styled.main`
     grid-area: "main";
-    /* max-width: 136.8rem; */
     margin: 0 auto;
     width: 136.8rem;
 
     display: flex;
     flex-direction: column;
     padding: 2.4rem 12.3rem;
+
+    @media (max-width: 600px) {
+    margin: 0 auto;
+    width: 100%;
+
+    padding: 2rem 2rem;
+    }
 `;
 
 export const ButtonBack = styled.div`
@@ -48,6 +53,16 @@ export const ButtonBack = styled.div`
         font-weight: 500;
         line-height: 4.48rem;
     }
+
+    @media (max-width: 600px) {
+    margin: 1rem 0;
+
+    > a {
+        font-size: 1.9rem;
+    }
+    > h2 {
+        font-size: 2.6rem;
+    }}
 `;
 
 export const Form = styled.form`
@@ -84,7 +99,18 @@ export const Form = styled.form`
     display: none;
     }
   }
-`;
+
+
+  @media (max-width: 600px) {
+    .uploadImage {
+    #file {
+      .uploadImageSelect {
+        height: 5.8rem;
+        width: 22rem;
+     }
+    }
+  }
+}`;
 
 export const InputWrapper = styled.div`
     display: flex;
@@ -125,6 +151,17 @@ export const InputWrapper = styled.div`
     color: ${({ theme }) => theme.COLORS.GRAY_100};
     }
 }
+
+
+@media (max-width: 600px) {
+
+    .dishCategory {
+        select{
+            height: 4.8rem;
+            width: 12rem;
+    }
+}}
+
 `;
 
 export const TextArea = styled.div`

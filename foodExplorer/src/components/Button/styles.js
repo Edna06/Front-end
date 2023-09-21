@@ -13,4 +13,12 @@ export const Container = styled.button`
     &:disabled{
         opacity: 0.5;
     }
+
+    @media (max-width: 600px) {
+    width: fit-content;
+    height: 5.8rem;
+
+    padding: 0.5rem 3.2rem;
+    }
+
 `;

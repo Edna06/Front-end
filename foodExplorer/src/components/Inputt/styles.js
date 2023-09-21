@@ -7,10 +7,13 @@ export const Container = styled.div`
     flex-direction: column;
     gap: 0.8rem;
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_200};
+
+
     > label{
         width: 100%;
         color: ${({theme}) => theme.COLORS.GRAY_100};
     }
+
     > input {
         height: 4.8rem;
         width: 100%;
@@ -20,7 +23,5 @@ export const Container = styled.div`
         border-radius: 0.5rem;
     }
 
-    /* > svg {
-            margin-left: 1.4rem;
-    } */
+
 `;
