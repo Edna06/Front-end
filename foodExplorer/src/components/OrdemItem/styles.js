@@ -51,4 +51,20 @@ export const Container = styled.div`
         width: 3.6rem;
         height: 2rem;
     }
+
+    @media (max-width: 600px){
+
+        .details{
+            h3{
+                font-size: 1.6rem;
+            }
+
+            span{
+                font-size: 1.2rem;
+            }}
+
+            .deleteButton{
+            font-weight: 700;
+            }
+    }
 `;

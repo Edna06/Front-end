@@ -15,7 +15,6 @@ export const Container = styled.div`
 
 export const Main = styled.main`
     grid-area: "main";
-    min-width: 136.8rem;
     padding: 2.4rem 12.3rem;
 
     display: grid;
@@ -85,4 +84,68 @@ export const Main = styled.main`
             }
         }
     }
+
+
+    @media (max-width: 600px) {
+
+    grid-area: "main";
+    /* width: fit-content; */
+    padding: 2.4rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+
+    margin: 0rem;
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .allOrders{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+          >span{
+              justify-content: center;
+            color: ${({theme}) => theme.COLORS.LOGO_COLOR};
+          }
+   }
+
+   .priceItems{
+        font-weight: 700;
+        font-size: 1.7rem;
+    }
+
+    .paymentMethods{
+        margin-top: 5rem;
+        margin-left: 0rem;
+        width: fit-content;
+    }
+
+    .paymentBox{
+        margin-top: 3.2rem;
+        width: 43rem;
+        height: 44.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
+    }
+    .paymentMethods__wrapper{
+
+        button {
+            width: 21.5rem;
+            height: 8.1rem;
+        }
+        }
+        .paymentForms{
+            img{
+                width: 20rem;
+                height: 20rem;
+            }
+        }
+    }
+
 `;

@@ -21,4 +21,10 @@ export const Container = styled.form`
         display: flex;
         gap: 2rem;
     }
+
+
+    @media (max-width: 600px){
+      width: fit-content;
+      height: fit-content;
+    }
 `;
