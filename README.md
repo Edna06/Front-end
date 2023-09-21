@@ -50,7 +50,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Axios;
 - LocalStorage;
 - React icons;
-- React-toastify.
 
   
 ## 🔖 Dados para o acesso como userAdmin:
