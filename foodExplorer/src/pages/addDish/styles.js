@@ -100,6 +100,31 @@ export const InputWrapper = styled.div`
       }
     }
 
+    .dishCategory {
+    p{
+        color: ${({theme})=> theme.COLORS.GRAY_100};
+    }
+
+    select {
+    margin-top: 1rem;
+    background: transparent;
+
+    border-radius: 0.5rem;
+    border: none;
+    border: 1px solid ${({ theme }) => theme.COLORS.GRAY};
+
+    height: 4.8rem;
+    width: 20rem;
+
+    padding: 12px;
+
+    font-size: 16px;
+
+    line-height: 26px;
+
+    color: ${({ theme }) => theme.COLORS.GRAY_100};
+    }
+}
 `;
 
 export const TextArea = styled.div`

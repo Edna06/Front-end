@@ -130,13 +130,16 @@ export function AddDish(){
                         onChange={e => setPrice(e.target.value)}
                         />
 
-                        <Input
-                        label="categoria"
-                        title="Categoria"
-                        type="text"
-                        placeholder="Categoria"
-                        onChange={e => setCategory(e.target.value)}
-                        />
+                        <div className="dishCategory">
+                          <p>Categoria</p>
+
+                          <select defaultValue={'default'} onChange={e => setCategory(e.target.value)}>
+                          <option value="default" disabled>Selecione a categoria</option>
+                          <option value="mainCourse">Pratos</option>
+                          <option value="drink">Bebidas</option>
+                          <option value="dessert">Sobremesas</option>
+                          </select>
+                        </div>
 
                     </InputWrapper>
 
