@@ -84,4 +84,41 @@ export const Main = styled.main`
             }
         }
     }
+
+
+
+
+
+    @media (max-width: 600px) {
+
+    min-width: 100%;
+    padding: 3rem 1rem;
+
+    margin: 0 auto;
+    gap: 3.5rem;
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .tableStyles {
+        font-size: 1rem;
+        thead{
+
+            th {
+                padding: 0.8rem;
+                min-width: 8rem;
+                height: 4rem;
+            }
+        }
+
+        tbody {
+            td {
+                padding: 1rem 1rem;
+                span {
+                    padding-left: 1rem;
+                }
+            }
+        }
+    } }
 `;
