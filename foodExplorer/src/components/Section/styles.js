@@ -12,6 +12,19 @@ export const Container = styled.div`
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
 
+    @media (max-width: 600px){
+
+        gap: 2rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+
+        h2 {
+            font-size: 2.8rem;
+            line-height: 3.5rem;
+            text-align: center;
+        }
+    }
+
 
 ::-webkit-scrollbar {
     width: 0.1px;
@@ -46,4 +59,15 @@ export const Slider = styled.div`
     .ArrowForward{
         background: linear-gradient(90deg, rgba(0, 10, 15, 0.272541) 0%, #000A0F 100%);
     }
+
+    @media (max-width: 600px){
+    width: 500px;
+    margin: 0 auto;
+
+
+    > div {
+    display: flex;
+    gap: 1rem;
+    }
+  }
 `;

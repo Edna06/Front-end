@@ -146,9 +146,6 @@ export const Content = styled.div`
         gap: 2.4rem;
 
 }
-
-
-
 }`;
 
 export const AllIngredientCards = styled.section`

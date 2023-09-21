@@ -85,7 +85,6 @@ export const Container = styled.div`
 
         .Amount {
             display: flex;
-            /* align-items: center; */
             gap: 1.5rem;
             .PlusItem,
             .MinusItem{
@@ -99,5 +98,44 @@ export const Container = styled.div`
             }
           }
         }
+    }
+
+
+    @media (max-width: 600px){
+
+    width: 23rem;
+    height: 46.2rem;
+    padding: 2rem ;
+
+    gap: 1rem;
+
+    .FavoriteDish {
+        > svg {
+        width: 2.2rem;
+        height: 2.2rem;
+        }
+    }
+
+    img {
+        width: 10.6rem;
+        height: 10.6rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        line-height: 2.6rem;
+        text-align: center;
+    }
+
+    span {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        text-align: center;
+    }
+
+    h4 {
+        font-size: 2.2rem;
+    }
+
 
 }`;
