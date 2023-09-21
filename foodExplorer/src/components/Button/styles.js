@@ -19,6 +19,7 @@ export const Container = styled.button`
     height: 5.8rem;
 
     padding: 0.5rem 3.2rem;
+    margin: 0 auto;
     }
 
 `;

@@ -13,7 +13,6 @@ export const Container = styled.div`
 
 export const Main = styled.main`
     grid-area: "main";
-    /* max-width: 136.8rem; */
     margin: 2rem auto 0;
     width: 136.8rem;
 
@@ -22,7 +21,21 @@ export const Main = styled.main`
     padding: 2.4rem 12.3rem;
 
     >h2{
-        font-size: 32px;
+        font-size: 3.2rem;
+    }
+
+    @media (max-width: 600px) {
+    margin: 0 auto;
+    width: 100%;
+
+    padding: 2rem 2rem;
+
+    >h2{
+        font-size: 2.4rem;
+        font-weight: 600;
+
+    }
+
     }
 `;
 
@@ -49,7 +62,6 @@ export const Form = styled.form`
         }
     }
     .uploadImage {
-
     #file {
       color: ${({ theme }) => theme.COLORS.GRAY_100};
       display: flex;
@@ -73,6 +85,17 @@ export const Form = styled.form`
     display: none;
     }
   }
+
+  @media (max-width: 600px) {
+    .uploadImage {
+    #file {
+      .uploadImageSelect {
+        height: 4.8rem;
+        width: 22rem;
+     }
+    }
+  }
+}
 `;
 
 export const InputWrapper = styled.div`
@@ -96,8 +119,6 @@ export const InputWrapper = styled.div`
     >div:nth-child(3){
         width: 30%;
     }
-
-
 `;
 
 export const TextArea = styled.div`
@@ -157,11 +178,18 @@ export const ButtonBack = styled.div`
         background-color: transparent;
         color: ${({theme})=> theme.COLORS.GRAY};
         display: flex;
-        align-items: center;
         font-size: 2.4rem;
         font-weight: 500;
         line-height: 3.6rem;
     }
+
+    @media (max-width: 600px) {
+        margin: 1rem 0 3rem;
+
+        > a {
+        font-size: 1.9rem;
+    }
+}
 `;
 
 export const SendFormWithImage = styled.div`
@@ -169,7 +197,4 @@ export const SendFormWithImage = styled.div`
     align-items: flex-end;
     justify-content: space-between;
 
-    > button{
-        /* width: 40%; */
-    }
 `;
